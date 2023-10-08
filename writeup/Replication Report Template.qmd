@@ -11,8 +11,12 @@ format:
 <!-- Replication reports should all use this template to standardize reporting across projects.  These reports will be public supplementary materials that accompany the summary report(s) of the aggregate results. -->
 
 ## Introduction
+Experiment 1 of Tarampi’s (2016) paper explored how stereotype threat contributes to gender differences in perspective-taking task performances. The researchers found that women tended to perform better when the same task was framed as a social perspective-taking task rather than spatial. This research aligned with my research interest in social cognition. Here, the result suggests that expectations from others influences one’s performance. I wonder how it might translate into social learning and education strategies.
 
-[No abstract is needed.]  Each replication project will have a straightforward, no frills report of the study and results.  These reports will be publicly available as supplementary material for the aggregate report(s) of the project as a whole.  Also, to maximize project integrity, the intro and methods will be written and critiqued in advance of data collection.  Introductions can be just 1-2 paragraphs clarifying the main idea of the original study, the target finding for replication, and any other essential information.  It will NOT have a literature review -- that is in the original publication. You can write both the introduction and the methods in past tense.  
+Two tests were used in the experiment: the spatial orientation test and the road-map test. Participants also filled out the AQ questionnaire (Baron-Cohen et al., 2001). All the materials can be found on OSF. The original experiment was done in person, individually, or in a group of 2- 8 people of the same sex. Researchers first introduced perspective-taking ability, framing it either as a test of spatial ability or as a test of empathetic ability. Then, the participants took the spatial orientation test, road-map test, and filled out the AQ questionnaire, with researchers providing instruction at the start of each of the three tasks. 
+
+A foreseeable challenge will be crafting a reasonable schedule for recruiting participants, running the task in person, and coding responses. The original study had 139 undergraduate student participants. If I were to run it with around the same number of participants, the time needed from recruiting participants to producing analyzable data would be a lot. Some possible solutions are only focusing on one type of task or running the experiment online.
+
 
 
 ## Summary of prior replication attempt
