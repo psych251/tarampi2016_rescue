@@ -17,6 +17,8 @@ Two tests were used in the experiment: the spatial orientation test and the road
 
 A foreseeable challenge will be crafting a reasonable schedule for recruiting participants, running the task in person, and coding responses. The original study had 139 undergraduate student participants. If I were to run it with around the same number of participants, the time needed from recruiting participants to producing analyzable data would be a lot. Some possible solutions are only focusing on one type of task or running the experiment online.
 
+The repository: https://github.com/psych251/tarampi2016_rescue
+The original paper: https://github.com/psych251/tarampi2016_rescue/blob/b3d6e7d926d3fa4e1370badfc73cf76629088592/original_paper/tarampi-et-al-2016-a-tale-of-two-types-of-perspective-taking-sex-differences-in-spatial-ability.pdf
 
 
 ## Summary of prior replication attempt
