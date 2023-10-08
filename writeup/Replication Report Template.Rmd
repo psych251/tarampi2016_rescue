@@ -1,11 +1,8 @@
 ---
-title: "Replication of Study X by Sample & Sample (20xx, Psychological Science)"
-author: "Replication Author[s] (contact information)"
+title: "Replication of Experiment 1: perspective-taking tasks by Tamrapi, Heydari & Hegarty (2016, Psychological Science)"
+author: "Chuqi Hu (chuqihu@stanford.edu)"
 date: "`r format(Sys.time(), '%B %d, %Y')`"
-format:
-  html:
-    toc: true
-    toc_depth: 3
+output: html_document
 ---
 
 <!-- Replication reports should all use this template to standardize reporting across projects.  These reports will be public supplementary materials that accompany the summary report(s) of the aggregate results. -->
@@ -18,6 +15,7 @@ Two tests were used in the experiment: the spatial orientation test and the road
 A foreseeable challenge will be crafting a reasonable schedule for recruiting participants, running the task in person, and coding responses. The original study had 139 undergraduate student participants. If I were to run it with around the same number of participants, the time needed from recruiting participants to producing analyzable data would be a lot. Some possible solutions are only focusing on one type of task or running the experiment online.
 
 The repository: https://github.com/psych251/tarampi2016_rescue
+
 The original paper: https://github.com/psych251/tarampi2016_rescue/blob/b3d6e7d926d3fa4e1370badfc73cf76629088592/original_paper/tarampi-et-al-2016-a-tale-of-two-types-of-perspective-taking-sex-differences-in-spatial-ability.pdf
 
 
@@ -118,3 +116,4 @@ Open the discussion section with a paragraph summarizing the primary result from
 ### Commentary
 
 Add open-ended commentary (if any) reflecting (a) insights from follow-up exploratory analysis, (b) assessment of the meaning of the replication (or not) - e.g., for a failure to replicate, are the differences between original and present study ones that definitely, plausibly, or are unlikely to have been moderators of the result, and (c) discussion of any objections or challenges raised by the current and original authors about the replication attempt.  None of these need to be long.
+
