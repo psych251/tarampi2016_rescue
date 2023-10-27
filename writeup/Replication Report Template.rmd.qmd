@@ -2,10 +2,7 @@
 title: "Replication of Experiment 1: perspective-taking tasks by Tamrapi, Heydari & Hegarty (2016, Psychological Science)"
 author: "Chuqi Hu (chuqihu@stanford.edu)"
 date: "`r format(Sys.time(), '%B %d, %Y')`"
-format:
-  html:
-    toc: true
-    toc_depth: 3
+output: html_document
 ---
 
 <!-- Replication reports should all use this template to standardize reporting across projects.  These reports will be public supplementary materials that accompany the summary report(s) of the aggregate results. -->
@@ -18,12 +15,21 @@ Two tests were used in the experiment: the spatial orientation test and the road
 A foreseeable challenge will be crafting a reasonable schedule for recruiting participants, running the task in person, and coding responses. The original study had 139 undergraduate student participants. If I were to run it with around the same number of participants, the time needed from recruiting participants to producing analyzable data would be a lot. Some possible solutions are only focusing on one type of task or running the experiment online.
 
 The repository: https://github.com/psych251/tarampi2016_rescue
+
 The original paper: https://github.com/psych251/tarampi2016_rescue/blob/b3d6e7d926d3fa4e1370badfc73cf76629088592/original_paper/tarampi-et-al-2016-a-tale-of-two-types-of-perspective-taking-sex-differences-in-spatial-ability.pdf
 
 
 ## Summary of prior replication attempt
 
-Based on the prior write-up, describe any differences between the original and 1st replication in terms of methods, sample, sample size, and analysis. Note any potential problems such as exclusion rates, noisy data, or issues with analysis. 
+The prior replication attempt made four main changes compared to the original study.
+
+1)	The original study was conducted in person, and participants were tested individually or in same-sex groups of 2 to 8 participants. The prior replication attempt converted the study to an online format, and participants were tested individually. A concern the replication experimenter raised is whether state induction of gender bias was effective in the online environment. 
+
+2)	Participants of the original study were 139 undergraduate students at UC Santa Barbara. The prior replication was done with 255 Mechanical Turk workers whose demographics weren’t specified in the report, so we don’t know if the demographics differ a lot in terms of age and background.
+
+3)	The original study consisted of three parts: two timed pencil-and-paper tests of perspective-taking ability (the object-perspective/spatial orientation test (Hegarty & Waller, 2004) and the road-map test (Money et al., 1965; modified by Zacks et al., 2002)) and a questionnaire that aims to measure autistic trait in adults. The prior replication attempt only kept the road-map test in order to collect more data of interest. They also included two questions at the end of the experiment, one asking about the participant’s prior CS experience and the other asking about participants’ assessment of their math ability.
+
+4)	No description of the exclusion criterion was mentioned in the original paper. The experimenter of the replication attempt did two sets of data analyses using a light exclusion criterion (excluding participants who labeled no corner) and a strict exclusion criterion (excluding those with less than 60% accuracy). The original results did not replicate in either one. 
 
 ## Methods
 
@@ -37,30 +43,65 @@ How much power does your planned sample have for original effect? For an attenua
 
 ### Planned Sample
 
-Planned sample size and/or termination rule, sampling frame, known demographics if any, preselection rules if any.
+The sample size will be determined after the power analysis.
+The age range of the participants will be 18-22 to match that in the original study. The study must also be done on Laptops. 
+
+The original study did not specify any exclusion criterion. I’m considering excluding participants who do not label any corner or whose accuracy rate is below chance since it signals low effort in the study. 
 
 ### Materials
 
-All materials - can quote directly from original article - just put the text in quotations and note that this was followed precisely.  Or, quote directly and just point out exceptions to what was described in the original article.
+In the original study, “the experiment consisted of two timed pencil-and-paper tests of perspective-taking ability: the object-perspective/spatial-orientation test (Hegarty & Waller, 2004) and the standardized road-map test of direction sense (the road-map test; Money et al., 1965; modified by Zacks et al., 2002)…The road-map test consisted of a bird’s-eye diagram of a path through a city. Participants were instructed to imagine walking along the path and write either “R” or “L” at each corner to indicate whether to take a right or left turn. The social version of the task included a human figure at every corner (see Fig. 2, right panel). Participants in the social condition were instructed to imagine themselves taking the perspective of the person as he or she walked along the path. Their score was the number of corners labeled correctly.”
+
+In this rescue project, I will follow the first replication attempt and only focus on the road-map test. In the first replication attempt, participants labeled corners using drop-down menus to indicate either turning left or right. The experimenter expressed concerns about the extra cognitive load related to interacting with the drop-down menus. Therefore, I plan to change the drop-down menus to clicking the right or the left arrow key on the keyboard. Instead of showing the complete roadmap at once, I'm also considering showing it trial by trial (meaning trial shows one corner or a few corner). This will be decided after I the pilot study.
+
+The code for the replication study was in Javascript, HTML, and CSS. Only partial codes are available, and there is no code for data collection, so I plan to recreate the study with jsPsych. 
 
 ### Procedure	
 
-Can quote directly from original article - just put the text in quotations and note that this was followed precisely.  Or, quote directly and just point out exceptions to what was described in the original article.
+Participants will be tested individually online. In both conditions, participants will be told that they will complete a task that will test their perspective-taking ability. 
+
+“Participants in the spatial condition were given unmodified tests and also received the following information, which emphasized that perspective-taking is a spatial ability in which men have an advantage over women: 
+
+Perspective-taking ability can be thought of as a measure of spatial ability. Spatial ability is a cognitive ability that is defined as understanding the relations between objects in space and being able to mentally manipulate them and respond correctly. Males often score higher on measures of spatial ability. 
+
+Participants in the social condition were given modified tests, which included human figures, and received the following additional information, which emphasized that perspective-taking is an empathetic ability in which women have an advantage over men: 
+
+Perspective-taking ability can be thought of as a measure of empathetic ability. Empathetic ability is a social ability that is defined as being able to identify with and understand what another person is seeing or feeling, and respond appropriately. Females often score higher on measures of empathetic ability.”
+
+The above-mentioned instructions will appear line by line on the screen. Participants will be instructed to read carefully and click the “next” button to go to the next sentence. This is different from the previous replication attempt, and the goal is to achieve a more effective state induction. 
+
+The participants then complete the road-map test. In the road-map test, participants will be first given the instruction and complete an untimed practice trial where they are expected to indicate three corner turns correctly.  
+
+Once they completed the practice trial, they will be given 30 s to complete as many of the 32 items as possible. 
+
+At the end of the study, instead of asking for participants’ CS experience as the experiment did in the first replication attempt, I plan to do a manipulation check that probes whether the state induction of gender bias has been effective.
+
+So, after completing the road-map test, two multiple-choice questions will appear on the screen. 
+
+Please fill in the blank based on the information you saw at the beginning of the experiment. 
+
+1.	Perspective-taking ability can be thought of as a measure of  ______(Choice1: spatial ability. Choice 2: empathetic ability)
+
+2.	_________ (Choice1: females. Choice 2: males) often score higher on measures of empathetic/spatial (depending on the condition) ability 
+
 
 ### Controls
 
-What attention checks, positive or negative controls, or other quality control measures are you adding so that a (positive or negative) result will be more interpretable?
-
+The fact that the participant needs to click the next button to proceed to the next sentence in the instruction functions as an attention check. Additionally, participants need to correctly complete the practice trial in order to proceed. 
 
 ### Analysis Plan
 
-Can also quote directly, though it is less often spelled out effectively for an analysis strategy section.  The key is to report an analysis strategy that is as close to the original - data cleaning rules, data exclusion rules, covariates, etc. - as possible.  
+The analysis will be a 2 (sex: male, female) X 2 (condition: social, spatial) between-subject analysis of variance (ANOVA). 
+The original study did not exclude any data based on participants’ performance in the road-map test. However, I’m considering excluding participants who clearly did not put in the effort (ex., did not label any corner or whose accuracy rate was below chance).
 
-**Clarify key analysis of interest here**  You can also pre-specify additional analyses you plan to do.
+Additionally, a t-test will be done to see whether the state induction was effective.
+
 
 ### Differences from Original Study and 1st replication
 
-Explicitly describe known differences in sample, setting, procedure, and analysis plan from original study.  The goal, of course, is to minimize those differences, but differences will inevitably occur.  Also, note whether such differences are anticipated to make a difference based on claims in the original article or subsequent published research on the conditions for obtaining the effect.
+This study aims to convert the original study to an online format, which is in line with the 1st replication attempt. However, it differs from the 1st replication in three ways. 1) Instead of showing the instructions in one paragraph, I plan to show the instructions line by line to mimic real-time communication. 2) Instead of asking the participant to select "right" or "left" from a drop-down menu, I plan to let them use the arrow keys to indicate direction. 3)I also plan to show the trials one by one. 4) Unlike the 1st replication, which introduced additional questions probing participants' CS and math background, I plan to ask questions that probe whether the state induction succeeded. This is to address one of the main concerns from the previous replication.
+
+Unlike the original study (which had no exclusion criteria) or the 1st replication (had two sets of exclusion criteria), I plan to apply one exclusion criterion to filter out the data from participants who clearly did not put effort into their answering. 
 
 ### Methods Addendum (Post Data Collection)
 
@@ -79,6 +120,13 @@ You can comment this section out prior to final report with data collection.
 ### Data preparation
 
 Data preparation following the analysis plan.
+
+Read in data and remove unneeded columns.
+
+Exclude participants who did not label any corner right or whose accuracy was less than 50%.
+
+Calculate mean scores in each group (males- spatial, males-social, females-spatial, females-social)
+
 	
 ```{r include=F}
 ### Data Preparation
@@ -94,11 +142,15 @@ Data preparation following the analysis plan.
 
 ### Results of control measures
 
-How did people perform on any quality control checks or positive and negative controls? 
+Conduct a t-test to see whether state induction was effective. 
+
 
 ### Confirmatory analysis
 
-The analyses as specified in the analysis plan.  
+
+Run ANOVA test.
+
+
 
 *Three-panel graph with original, 1st replication, and your replication is ideal here*
 
