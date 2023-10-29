@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Experiment-Spatial</title>
+  <script src="https://unpkg.com/jspsych@7.3.1"></script>
+  <script src="https://unpkg.com/@jspsych/plugin-html-button-response@1.1.2"></script>
+  <script src="https://unpkg.com/@jspsych/plugin-html-button-response@1.1.2"></script>
+  <script src="https://unpkg.com/@jspsych/plugin-html-keyboard-response@1.1.2"></script>
+  <script src="https://unpkg.com/@jspsych/plugin-survey-text@1.1.2"></script>
+  <script src="https://unpkg.com/@jspsych/plugin-preload@1.0.0"></script>
+  <script src="https://unpkg.com/@jspsych-contrib/plugin-pipe"></script>
+  <script src="https://unpkg.com/@jspsych/plugin-instructions@1.1.1"></script>
+  <script src="https://unpkg.com/@jspsych/plugin-image-keyboard-response@1.1.2"></script>
+  <script src="https://unpkg.com/@jspsych/plugin-survey-multi-choice@1.1.2"></script>
+  <link href="https://unpkg.com/jspsych@7.3.1/css/jspsych.css" rel="stylesheet" type="text/css" />
+
+</head>
+<body></body>
+<script>
+
+
+
+  /* initialize jsPsych */
+  var jsPsych = initJsPsych({
+    override_safe_mode: true,
+    on_finish: function () {
+            jsPsych.data.displayData("csv");
+  }});
+
+  // capture info from Prolific
+  var subject_id = jsPsych.data.getURLVariable('PROLIFIC_PID');
+  var study_id = jsPsych.data.getURLVariable('STUDY_ID');
+  var session_id = jsPsych.data.getURLVariable('SESSION_ID');
+
+  jsPsych.data.addProperties({
+    subject_id: subject_id,
+    study_id: study_id,
+    session_id: session_id
+  });
+  var timeline = [];
+
+  //welcome page
+
+  var consent = {
+    type: jsPsychHtmlButtonResponse,
+    stimulus: '<p style="font-size:20px; color:black;"><p>By answering the following questions, you are participating in a study being performed by cognitive scientists in the Stanford Department of Psychology. </p><p>If you have questions about this research, please contact us at stanfordpsych251@gmail.com. </p><p>You must be at least 18 years old to participate. Your participation in this research is voluntary. You may decline to answer any or all of the following questions. You may decline further participation, at any time, without adverse consequences. </p><p>Your anonymity is assured; the researchers who have requested your participation will not receive any personal information about you.</p>',
+  choices: ['Start'],
+
+  }
+  timeline.push(consent);
+
+  var instruction_one = {
+    type: jsPsychHtmlButtonResponse,
+  stimulus: '<p style="font-size:20px; color:black;">Our experiment is a task that tests your perspective taking ability.</p>',
+  choices: ['Next'],
+  };
+  timeline.push(instruction_one);
+
+  var instruction_two= {
+    type: jsPsychHtmlButtonResponse,
+  stimulus: '<p style="font-size:20px; color:black;">Perspective taking ability can be thought of as a measure of <strong>spatial ability</strong>.</p>',
+  choices: ['Next'],
+  };
+  timeline.push(instruction_two);
+  var instruction_three= {
+    type: jsPsychHtmlButtonResponse,
+  stimulus: '<p style="font-size:20px; color:black;"><p>Spatial ability is a cognitive ability that is defined as understanding the relations between objects in space </p><p> and being able to mentally manipulate them and respond correctly.</p>',
+  choices: ['Next'],
+  };
+  timeline.push(instruction_three);
+  var instruction_four= {
+    type: jsPsychHtmlButtonResponse,
+  stimulus: '<p style="font-size:20px; color:black;">Previous studies have shown that <strong>males often score higher on measures of spatial ability</strong>.</p>',
+  choices: ['Next'],
+  };
+  timeline.push(instruction_four);
+
+  var instruction_spatial = {
+    type: jsPsychHtmlButtonResponse,
+    stimulus:
+      `<p>In this test, you will be shown a map of a city with a path drawn through it. </p>
+      <p>Imagine yourself taking a walk through the path, following the direction of the arrow.</p> 
+      <p>At each turn that the path takes, 
+      your task is to decide whether you would turn to your right or your left as you are walking. </p>
+      <p>If it is a <strong> right turn</strong>, click on the <strong> right arrow key</strong>  on your keyboard,</p>
+      <p>and if it is a <strong> left turn</strong>, click on the <strong> left arrow key</strong>  on your keyboard.</p>
+      <p>You will first see three practice trials. </p>
+      <p>Please do not turn your computer screen/head.</p>`,
+      choices: ['I have read the instructions and I am ready'],
+    show_clickable_nav: true,
+   
+  };
+  timeline.push(instruction_spatial);
+
+  var instruction_practice= {
+    type: jsPsychHtmlButtonResponse,
+  stimulus: '<p style="font-size:20px; color:black;">You will first see three practice trials</p><p><p>If it is a <strong> right turn</strong>, click on the <strong> right arrow key</strong>  on your keyboard,</p><p>and if it is a <strong> left turn</strong>, click on the <strong> left arrow key</strong>  on your keyboard.</p> ',
+  choices: ['Next'],
+  };
+  
+  timeline.push(instruction_practice);
+
+var practice_trials = {
+    type: jsPsychImageKeyboardResponse,
+    choices:  ['ArrowLeft', 'ArrowRight'],
+    timeline: [
+        {stimulus: 'img/spatial/practice/1.png'},
+        {stimulus: 'img/spatial/practice/2.png'},
+        {stimulus: 'img/spatial/practice/3.png'}
+    ]
+}
+timeline.push(practice_trials);
+var instruction_experiment_trials= {
+    type: jsPsychHtmlButtonResponse,
+  stimulus: '<p style="font-size:20px; color:black;"> Now, you will have 30s to complete as many of the 32 trials as you can.',
+  choices: ['Next'],
+  };
+timeline.push(instruction_experiment_trials);
+
+var time_limit = 30000;
+    var start_time;
+    var end_test_timer;
+    var trial_count = 0;
+
+  
+
+    var test_stimuli = [
+        { stimulus: "img/spatial/1.png", correct_response: 'ArrowLeft'},
+        { stimulus: "img/spatial/2.png", correct_response: 'ArrowLeft'},
+        { stimulus: "img/spatial/3.png", correct_response: 'ArrowRight'},
+        { stimulus: "img/spatial/4.png", correct_response: 'ArrowRight' },
+        { stimulus: "img/spatial/5.png", correct_response: 'ArrowLeft'  },
+        { stimulus: "img/spatial/6.png",correct_response: 'ArrowLeft'  },
+        { stimulus: "img/spatial/7.png" ,correct_response: 'ArrowRight' },
+        { stimulus: "img/spatial/8.png",correct_response: 'ArrowRight'  },
+        { stimulus: "img/spatial/9.png",correct_response: 'ArrowRight'  },
+        { stimulus: "img/spatial/10.png",correct_response: 'ArrowLeft'  },
+        { stimulus: "img/spatial/11.png",correct_response: 'ArrowRight'  },
+        { stimulus: "img/spatial/12.png",correct_response: 'ArrowLeft'  },
+        { stimulus: "img/spatial/13.png",correct_response: 'ArrowLeft'  },
+        { stimulus: "img/spatial/14.png",correct_response: 'ArrowRight'  },
+        { stimulus: "img/spatial/15.png",correct_response: 'ArrowRight'  },
+        { stimulus: "img/spatial/16.png",correct_response: 'ArrowLeft'  },
+        { stimulus: "img/spatial/17.png",correct_response: 'ArrowLeft'  },
+        { stimulus: "img/spatial/18.png",correct_response: 'ArrowRight'  },
+        { stimulus: "img/spatial/19.png",correct_response: 'ArrowRight'  },
+        { stimulus: "img/spatial/20.png",correct_response: 'ArrowLeft'  },
+        { stimulus: "img/spatial/21.png",correct_response: 'ArrowLeft'  },
+        { stimulus: "img/spatial/22.png",correct_response: 'ArrowRight'  },
+        { stimulus: "img/spatial/23.png",correct_response: 'ArrowRight'  },
+        { stimulus: "img/spatial/24.png",correct_response: 'ArrowRight'  },
+        { stimulus: "img/spatial/25.png",correct_response: 'ArrowLeft'  },
+        { stimulus: "img/spatial/26.png",correct_response: 'ArrowLeft'  },
+        { stimulus: "img/spatial/27.png",correct_response: 'ArrowLeft'  },
+        { stimulus: "img/spatial/28.png",correct_response: 'ArrowRight'  },
+        { stimulus: "img/spatial/29.png",correct_response: 'ArrowRight'  },
+        { stimulus: "img/spatial/30.png",correct_response: 'ArrowLeft'  },
+        { stimulus: "img/spatial/31.png",correct_response: 'ArrowRight'  },
+        { stimulus: "img/spatial/32.png",correct_response: 'ArrowRight'  },
+    ];
+
+    var n_trials = test_stimuli.length;
+    function getKeyCodeFromKeyCharacter(keyCharacter) {
+      switch(keyCharacter.toLowerCase()) {  // Convert to lowercase for comparison
+        case 'arrowleft':
+            return 37;
+        case 'arrowright':
+            return 39;
+        // Add cases for other keys if needed
+        default:
+            return -1; // return a non-valid key code
+    }
+}
+
+    var test = {
+        type: jsPsychImageKeyboardResponse,
+        stimulus: jsPsych.timelineVariable('stimulus'),
+        choices:  ['ArrowLeft', 'ArrowRight'],
+        on_load: function() {
+            trial_count++;
+            // we need to set up the timer to end the current timeline after a certain duration, but only on the first trial
+            if (trial_count == 1) {
+                start_time = performance.now();
+                 end_test_timer = setTimeout(function() {
+                    // this stuff is just for testing
+                    var end_time = performance.now();
+                    var elapsed_time = end_time - start_time;
+                    console.log("elapsed time: ", elapsed_time);
+                    // this function is all you need to end the current timeline
+                    jsPsych.endCurrentTimeline();
+                    // this function ends the current trial 
+                    jsPsych.finishTrial({status: "ended early"});
+                }, time_limit);
+            }
+        }, 
+        on_finish: function(data) {
+          var correct_response = jsPsych.timelineVariable('correct_response', true).toLowerCase();
+
+    // Check if the response matches the correct response and record it
+    data.correct = data.response === correct_response;
+
+        // Existing code to clear the timer
+        if (trial_count == 32) {
+            clearTimeout(end_test_timer);
+            }
+        }
+    }
+
+    var test_procedure = {
+        timeline: [test],
+        timeline_variables: test_stimuli
+    };
+
+
+timeline.push(test_procedure);
+
+var last_instruction= {
+  on_start: function(data) {
+
+                clearTimeout(end_test_timer);
+            },
+    
+  type: jsPsychHtmlButtonResponse,
+  stimulus: '<p style="font-size:20px; color:black;"><p>You have finished the task - thanks for participating! Three more questions before you go. </p>',
+  choices: ['OK'],
+
+  };
+
+timeline.push(last_instruction);
+
+var Question1 = {
+  type: jsPsychSurveyMultiChoice,
+  questions: [
+    {
+      prompt: "What is your biological sex", 
+      name: 'sex', 
+      options: ['Male', 'Female','Other'], 
+      required: true
+    }
+  ],
+};
+timeline.push(Question1);
+var Question2 = {
+  type: jsPsychSurveyMultiChoice,
+  questions: [
+    {
+      prompt: "Perspective-taking ability can be thought of as a measure of _______.", 
+      name: 'q2', 
+      options: ['spatial ability', 'empathetic ability'], 
+      required: true
+    }, 
+  
+  ],
+};
+timeline.push(Question2);
+
+var Question3 = {
+  type: jsPsychSurveyMultiChoice,
+  questions: [
+    {
+      prompt: "_______ often score higher on measures of spatial ability.", 
+      name: 'q3', 
+      options: ['Males', 'Females'], 
+      required: true
+    }
+  ],
+};
+timeline.push(Question3);
+
+
+var Debrief= {
+  type: jsPsychHtmlButtonResponse,
+  stimulus: '<p style="font-size:20px; color:black;"><p>Thanks for participating! In this study the task is framed either as a spatial task (which male participants typically perform better on) or a social task (which female participants typically perform better on). We are looking at the effect of gender bias in problem framing on performance. We ask that you please do not share this information with other potential participants. </p>',
+  choices: ['Submit'],
+
+  };
+
+  timeline.push(Debrief);
+
+  jsPsych.run(timeline);
+</script>
+
+</html>
