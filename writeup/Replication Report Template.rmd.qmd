@@ -128,27 +128,83 @@ Exclude participants who did not label any corner right or whose accuracy was le
 Calculate mean scores in each group (males- spatial, males-social, females-spatial, females-social)
 
 	
-```{r include=F}
+```{r}
 ### Data Preparation
 
 #### Load Relevant Libraries and Functions
+library(readr)
+library(dplyr)
+library(ggplot2)
+library(ez)
+library(osfr)
+library(tidyr)
+library(jsonlite)
+library(stringr)
 
 #### Import data
+files <- list.files(path="~/Desktop/tarampi2016_rescue/pilot data/", full.names = TRUE)
+# read in and combine all the CSV files using bind_rows()
+combined_data <- lapply(files, function(filepath) {
+  df <- read.csv(filepath)
+  return(df)
+})%>%
+  bind_rows()
 
 #### Data exclusion / filtering
+# exclude unwanted columns and rows
+organized.data <- combined_data %>%
+  select("subject_id", "stimulus","response", "condition", "correct") %>%
+  filter (response != 0 ) %>%
+  filter (subject_id != "na")
+
 
 #### Prepare data for analysis - create columns etc.
+correct_counts <- organized.data %>%
+  mutate(gender = case_when(response == '{"sex":"Female"}' ~ "Female",
+                            response == '{"sex":"Male"}' ~ "Male",
+                            response == '{"sex":"Other"}' ~ "Other"))
+
+
+ready_data <-correct_counts%>%
+  group_by(subject_id,) %>%
+  mutate(correct_count = sum(correct, na.rm=TRUE))%>%
+  filter(is.na(gender)==FALSE)
+
+graph_data = ready_data %>%
+  group_by(condition, gender) %>%
+  summarise(mean_correct = mean(correct_count), mean_sem = sd(correct_count) / sqrt(n()))
+
+
+#descriptive statistics
+ggplot(data = graph_data, aes(x = gender, y = mean_correct, fill = condition)) + 
+   # Dodge the bars based on condition
+   geom_col(position = "dodge", width = 0.5) +
+   # Dodge the error bars as well
+   geom_errorbar(
+       aes(ymin = mean_correct - mean_sem, ymax = mean_correct + mean_sem), 
+       width = 0.2, position = position_dodge(0.5)) +
+   # Dodge the text labels, too
+   geom_text(aes(label = sprintf("%.2f", mean_correct)), vjust = -1.2, position = position_dodge(0.5))
+
+
+
+
+
+  
+
 ```
 
 ### Results of control measures
 
-Conduct a t-test to see whether state induction was effective. 
+
 
 
 ### Confirmatory analysis
-
-
-Run ANOVA test.
+```{r}
+#ANOVA test
+anova<- aov(correct_count ~ gender * condition, data = ready_data)
+summary(anova)
+```
 
 
 
