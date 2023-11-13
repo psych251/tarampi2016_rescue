@@ -14,6 +14,8 @@
   <script src="https://unpkg.com/@jspsych/plugin-image-keyboard-response@1.1.2"></script>
   <script src="https://unpkg.com/@jspsych/plugin-survey-multi-choice@1.1.2"></script>
   <link href="https://unpkg.com/jspsych@7.3.1/css/jspsych.css" rel="stylesheet" type="text/css" />
+  <script src="https://unpkg.com/@jspsych/plugin-fullscreen@1.1.2"></script>
+
 
 </head>
 <body></body>
@@ -28,6 +30,9 @@
             jsPsych.data.displayData("csv");
   }});
 
+  jsPsych.data.addProperties({
+  condition: "social"  // add the condition property here
+});
   // capture info from Prolific
   var subject_id = jsPsych.data.getURLVariable('PROLIFIC_PID');
   var study_id = jsPsych.data.getURLVariable('STUDY_ID');
@@ -39,6 +44,16 @@
     session_id: session_id
   });
   var timeline = [];
+  
+  var fullscreen_trial = {
+  type: jsPsychFullscreen,
+  fullscreen_mode: true,
+  message: '<p>The experiment will switch to full screen mode when you press the button below.</p>',
+  button_label: 'Continue',
+  delay_after: 1000 // This will wait for 1000 milliseconds before moving to the next trial
+};
+
+timeline.unshift(fullscreen_trial); 
 
   //welcome page
 
@@ -129,38 +144,38 @@ var time_limit = 30000;
   
 
     var test_stimuli = [
-        { stimulus: "img/social/version2/1.png", correct_response: 'ArrowLeft'},
-        { stimulus: "img/social/version2/2.png", correct_response: 'ArrowLeft'},
-        { stimulus: "img/social/version2/3.png", correct_response: 'ArrowRight'},
-        { stimulus: "img/social/version2/4.png", correct_response: 'ArrowRight' },
-        { stimulus: "img/social/version2/5.png", correct_response: 'ArrowLeft'  },
-        { stimulus: "img/social/version2/6.png",correct_response: 'ArrowLeft'  },
-        { stimulus: "img/social/version2/7.png" ,correct_response: 'ArrowRight' },
-        { stimulus: "img/social/version2/8.png",correct_response: 'ArrowRight'  },
-        { stimulus: "img/social/version2/9.png",correct_response: 'ArrowRight'  },
-        { stimulus: "img/social/version2/10.png",correct_response: 'ArrowLeft'  },
-        { stimulus: "img/social/version2/11.png",correct_response: 'ArrowRight'  },
-        { stimulus: "img/social/version2/12.png",correct_response: 'ArrowLeft'  },
-        { stimulus: "img/social/version2/13.png",correct_response: 'ArrowLeft'  },
-        { stimulus: "img/social/version2/14.png",correct_response: 'ArrowRight'  },
-        { stimulus: "img/social/version2/15.png",correct_response: 'ArrowRight'},
-        { stimulus: "img/social/version2/16.png",correct_response: 'ArrowLeft'},
-        { stimulus: "img/social/version2/17.png",correct_response: 'ArrowLeft'  },
-        { stimulus: "img/social/version2/18.png",correct_response: 'ArrowRight'  },
-        { stimulus: "img/social/version2/19.png",correct_response: 'ArrowRight'  },
-        { stimulus: "img/social/version2/20.png",correct_response: 'ArrowLeft'  },
-        { stimulus: "img/social/version2/21.png",correct_response: 'ArrowLeft'  },
-        { stimulus: "img/social/version2/22.png",correct_response: 'ArrowRight'  },
-        { stimulus: "img/social/version2/23.png",correct_response: 'ArrowRight'  },
-        { stimulus: "img/social/version2/24.png",correct_response: 'ArrowRight'  },
-        { stimulus: "img/social/version2/25.png",correct_response: 'ArrowLeft'  },
-        { stimulus: "img/social/version2/26.png",correct_response: 'ArrowLeft'  },
-        { stimulus: "img/social/version2/27.png",correct_response: 'ArrowLeft'  },
-        { stimulus: "img/social/version2/28.png",correct_response: 'ArrowRight'  },
-        { stimulus: "img/social/version2/29.png",correct_response: 'ArrowRight'  },
-        { stimulus: "img/social/version2/30.png",correct_response: 'ArrowLeft'  },
-        { stimulus: "img/social/version2/31.png",correct_response: 'ArrowRight'  },
-        { stimulus: "img/social/version2/32.png",correct_response: 'ArrowRight'  },
+        { stimulus: "img/social/version2/1.png", stimulus_height: 800, stimulus_width: 500, correct_response: 'ArrowLeft'},
+        { stimulus: "img/social/version2/2.png", stimulus_height: 800, stimulus_width: 500, correct_response: 'ArrowLeft'},
+        { stimulus: "img/social/version2/3.png", stimulus_height: 800, stimulus_width: 500, correct_response: 'ArrowRight'},
+        { stimulus: "img/social/version2/4.png", stimulus_height: 800, stimulus_width: 500, correct_response: 'ArrowRight' },
+        { stimulus: "img/social/version2/5.png", stimulus_height: 800, stimulus_width: 500, correct_response: 'ArrowLeft'  },
+        { stimulus: "img/social/version2/6.png",stimulus_height: 800, stimulus_width: 500, correct_response: 'ArrowLeft'  },
+        { stimulus: "img/social/version2/7.png" ,stimulus_height: 800, stimulus_width: 500, correct_response: 'ArrowRight' },
+        { stimulus: "img/social/version2/8.png",stimulus_height: 800, stimulus_width: 500, correct_response: 'ArrowRight'  },
+        { stimulus: "img/social/version2/9.png",stimulus_height: 800, stimulus_width: 500, correct_response: 'ArrowRight'  },
+        { stimulus: "img/social/version2/10.png",stimulus_height: 800, stimulus_width: 500, correct_response: 'ArrowLeft'  },
+        { stimulus: "img/social/version2/11.png",stimulus_height: 800, stimulus_width: 500, correct_response: 'ArrowRight'  },
+        { stimulus: "img/social/version2/12.png",stimulus_height: 800, stimulus_width: 500, correct_response: 'ArrowLeft'  },
+        { stimulus: "img/social/version2/13.png",stimulus_height: 800, stimulus_width: 500, correct_response: 'ArrowLeft'  },
+        { stimulus: "img/social/version2/14.png",stimulus_height: 800, stimulus_width: 500, correct_response: 'ArrowRight'  },
+        { stimulus: "img/social/version2/15.png",stimulus_height: 800, stimulus_width: 700, correct_response: 'ArrowRight'},
+        { stimulus: "img/social/version2/16.png",stimulus_height: 800, stimulus_width: 700, correct_response: 'ArrowLeft'},
+        { stimulus: "img/social/version2/17.png",stimulus_height: 800, stimulus_width: 500, correct_response: 'ArrowLeft'  },
+        { stimulus: "img/social/version2/18.png",stimulus_height: 800, stimulus_width: 500, correct_response: 'ArrowRight'  },
+        { stimulus: "img/social/version2/19.png",stimulus_height: 800, stimulus_width: 500, correct_response: 'ArrowRight'  },
+        { stimulus: "img/social/version2/20.png",stimulus_height: 800, stimulus_width: 500, correct_response: 'ArrowLeft'  },
+        { stimulus: "img/social/version2/21.png",stimulus_height: 800, stimulus_width: 500, correct_response: 'ArrowLeft'  },
+        { stimulus: "img/social/version2/22.png",stimulus_height: 800, stimulus_width: 500, correct_response: 'ArrowRight'  },
+        { stimulus: "img/social/version2/23.png",stimulus_height: 800, stimulus_width: 500, correct_response: 'ArrowRight'  },
+        { stimulus: "img/social/version2/24.png",stimulus_height: 800, stimulus_width: 500, correct_response: 'ArrowRight'  },
+        { stimulus: "img/social/version2/25.png",stimulus_height: 800, stimulus_width: 500, correct_response: 'ArrowLeft'  },
+        { stimulus: "img/social/version2/26.png",stimulus_height: 800, stimulus_width: 500, correct_response: 'ArrowLeft'  },
+        { stimulus: "img/social/version2/27.png",stimulus_height: 800, stimulus_width: 500, correct_response: 'ArrowLeft'  },
+        { stimulus: "img/social/version2/28.png",stimulus_height: 800, stimulus_width: 500, correct_response: 'ArrowRight'  },
+        { stimulus: "img/social/version2/29.png",stimulus_height: 800, stimulus_width: 500, correct_response: 'ArrowRight'  },
+        { stimulus: "img/social/version2/30.png",stimulus_height: 800, stimulus_width: 500, correct_response: 'ArrowLeft'  },
+        { stimulus: "img/social/version2/31.png",stimulus_height: 800, stimulus_width: 500, correct_response: 'ArrowRight'  },
+        { stimulus: "img/social/version2/32.png",stimulus_height: 800, stimulus_width: 500, correct_response: 'ArrowRight'  },
     ];
 
     var n_trials = test_stimuli.length;
@@ -180,8 +195,10 @@ var time_limit = 30000;
         type: jsPsychImageKeyboardResponse,
         stimulus: jsPsych.timelineVariable('stimulus'),
         choices:  ['ArrowLeft', 'ArrowRight'],
-        stimulus_height: 800,
-        stimulus_width: 500,
+        on_start: function(trial) {
+        trial.stimulus_height = jsPsych.timelineVariable('stimulus_height', true);
+        trial.stimulus_width = jsPsych.timelineVariable('stimulus_width', true);},
+        
         on_load: function() {
             trial_count++;
             // we need to set up the timer to end the current timeline after a certain duration, but only on the first trial
@@ -201,9 +218,11 @@ var time_limit = 30000;
         }, 
         on_finish: function(data) {
           var correct_response = jsPsych.timelineVariable('correct_response', true).toLowerCase();
+          
 
     // Check if the response matches the correct response and record it
     data.correct = data.response === correct_response;
+  
 
         // Existing code to clear the timer
         if (trial_count == 32) {
@@ -234,6 +253,12 @@ var last_instruction= {
 
 timeline.push(last_instruction);
 
+var correctAnswerQ2 = 'empathetic ability';
+var correctAnswerQ3 = 'Females';
+
+var answeredCorrectlyQ2 = false;
+var answeredCorrectlyQ3 = false;
+
 var Question1 = {
   type: jsPsychSurveyMultiChoice,
   questions: [
@@ -255,8 +280,13 @@ var Question2 = {
       options: ['spatial ability', 'empathetic ability'], 
       required: true
     }, 
+    
   
   ],
+  on_finish: function(data) {
+    var response = data.response.q2;
+    answeredCorrectlyQ2 = (response === correctAnswerQ2);
+  }
 };
 timeline.push(Question2);
 
@@ -270,9 +300,33 @@ var Question3 = {
       required: true
     }
   ],
+  on_finish: function(data) {
+    var response = data.response.q3;
+    answeredCorrectlyQ3 = (response === correctAnswerQ3);
+
+    // Check if both questions were answered correctly
+    var bothCorrect = answeredCorrectlyQ2 && answeredCorrectlyQ3;
+    jsPsych.data.addProperties({
+      bothQuestionsCorrect: bothCorrect
+    });
+  }
 };
 timeline.push(Question3);
 
+var tech_difficulties_question = {
+  type: jsPsychSurveyText,
+    questions: [
+        {
+            prompt: "Have you encountered any technical difficulties during this experiment? If yes, please describe them.",
+            name: 'technicalDifficulties',
+            rows: 4, // You can adjust the number of rows for the text area
+            columns: 40 // And the number of columns
+        }
+    ],
+    button_label: 'Submit'
+};
+timeline.push(tech_difficulties_question);
+  
 
 var Debrief= {
   type: jsPsychHtmlButtonResponse,
@@ -282,6 +336,7 @@ var Debrief= {
   };
 
   timeline.push(Debrief);
+
 
   jsPsych.run(timeline);
 </script>

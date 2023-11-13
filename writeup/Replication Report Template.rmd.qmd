@@ -138,8 +138,8 @@ library(ggplot2)
 library(ez)
 library(osfr)
 library(tidyr)
-library(jsonlite)
-library(stringr)
+
+
 
 #### Import data
 files <- list.files(path="~/Desktop/tarampi2016_rescue/pilot data/", full.names = TRUE)
@@ -172,11 +172,11 @@ ready_data <-correct_counts%>%
 
 graph_data = ready_data %>%
   group_by(condition, gender) %>%
-  summarise(mean_correct = mean(correct_count), mean_sem = sd(correct_count) / sqrt(n()))
+  mutate(mean_correct = mean(correct_count), mean_sem = sd(correct_count) / sqrt(n()))
 
 
 #descriptive statistics
-ggplot(data = graph_data, aes(x = gender, y = mean_correct, fill = condition)) + 
+ggplot(data = graph_data, aes(x = group, y = mean_correct, fill = condition)) + 
    # Dodge the bars based on condition
    geom_col(position = "dodge", width = 0.5) +
    # Dodge the error bars as well
