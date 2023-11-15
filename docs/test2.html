@@ -26,7 +26,8 @@
   var jsPsych = initJsPsych({
     override_safe_mode: true,
     on_finish: function () {
-            jsPsych.data.displayData("csv");
+           // jsPsych.data.displayData("csv");
+           proliferate.submit({"trials": data.values()});
   }});
 
   // capture info from Prolific
