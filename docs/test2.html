@@ -56,6 +56,21 @@
 
 timeline.unshift(fullscreen_trial); 
 
+var images = [];
+for (var i = 1; i <= 32; i++) {
+    images.push('img/spatial/version2/'+i + '.png');
+}
+var preload = {
+    type: jsPsychPreload,
+    images: images,
+    message: 'Please wait while the experiment loads. This may take a few minutes.',
+    show_progress_bar: true
+  
+}
+
+timeline.push(preload);
+
+
   //welcome page
 
   var consent = {

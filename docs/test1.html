@@ -8,7 +8,7 @@
   <script src="https://unpkg.com/@jspsych/plugin-html-button-response@1.1.2"></script>
   <script src="https://unpkg.com/@jspsych/plugin-html-keyboard-response@1.1.2"></script>
   <script src="https://unpkg.com/@jspsych/plugin-survey-text@1.1.2"></script>
-  <script src="https://unpkg.com/@jspsych/plugin-preload@1.0.0"></script>
+  <script src="https://unpkg.com/@jspsych/plugin-preload@1.1.2"></script>
   <script src="https://unpkg.com/@jspsych-contrib/plugin-pipe"></script>
   <script src="https://unpkg.com/@jspsych/plugin-instructions@1.1.1"></script>
   <script src="https://unpkg.com/@jspsych/plugin-image-keyboard-response@1.1.2"></script>
@@ -22,8 +22,6 @@
 </head>
 <body></body>
 <script>
-
-
 
   /* initialize jsPsych */
   var jsPsych = initJsPsych({
@@ -40,12 +38,18 @@
   var study_id = jsPsych.data.getURLVariable('STUDY_ID');
   var session_id = jsPsych.data.getURLVariable('SESSION_ID');
 
+
   jsPsych.data.addProperties({
     subject_id: subject_id,
     study_id: study_id,
     session_id: session_id
   });
   var timeline = [];
+
+
+
+
+
   
   var fullscreen_trial = {
   type: jsPsychFullscreen,
@@ -56,6 +60,20 @@
 };
 
 timeline.unshift(fullscreen_trial); 
+
+var images = [];
+for (var i = 1; i <= 32; i++) {
+    images.push('img/social/version2/'+i + '.png');
+}
+var preload = {
+    type: jsPsychPreload,
+    images: images,
+    message: 'Please wait while the experiment loads. This may take a few minutes.',
+    show_progress_bar: true
+  
+}
+
+timeline.push(preload);
 
   //welcome page
 
@@ -341,6 +359,8 @@ var Debrief= {
 
 
   jsPsych.run(timeline);
+
+
 </script>
 
 </html>
