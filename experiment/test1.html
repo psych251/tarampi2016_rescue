@@ -24,12 +24,13 @@
 
 
   /* initialize jsPsych */
-  var jsPsych = initJsPsych({
+    /* initialize jsPsych */
+    var jsPsych = initJsPsych({
     override_safe_mode: true,
-    on_finish: function () {
-            jsPsych.data.displayData("csv");
+    on_finish: function (data) {
+           // jsPsych.data.displayData("csv");
+           proliferate.submit({"trials": data.values()});
   }});
-
   jsPsych.data.addProperties({
   condition: "social"  // add the condition property here
 });
