@@ -72,7 +72,7 @@ timeline.push(preload);
 
   var consent = {
     type: jsPsychHtmlButtonResponse,
-    stimulus: '<p style="font-size:20px; color:black;"><p>By answering the following questions, you are participating in a study being performed by cognitive scientists in the Stanford Department of Psychology. </p><p>If you have questions about this research, please contact us at stanfordpsych251@gmail.com. </p><p>You must be at least 18 years old to participate. Your participation in this research is voluntary. You may decline to answer any or all of the following questions. You may decline further participation, at any time, without adverse consequences. </p><p>Your anonymity is assured; the researchers who have requested your participation will not receive any personal information about you.</p>',
+    stimulus: '<div style="text-align: left;padding: 0 20vw;"><p style="font-size:20px; color:black;"><p>By answering the following questions, you are participating in a study being performed by cognitive scientists in the Stanford Department of Psychology. </p><p>If you have questions about this research, please contact us at stanfordpsych251@gmail.com. </p><p>You must be at least 18 years old to participate. Your participation in this research is voluntary. You may decline to answer any or all of the following questions. You may decline further participation, at any time, without adverse consequences. </p><p>Your anonymity is assured; the researchers who have requested your participation will not receive any personal information about you.</p>',
   choices: ['Start'],
 
   }
@@ -80,26 +80,26 @@ timeline.push(preload);
 
   var instruction_one = {
     type: jsPsychHtmlButtonResponse,
-  stimulus: '<p style="font-size:20px; color:black;">Our experiment is a task that tests your perspective taking ability.</p>',
+  stimulus: '<div style="text-align: left;padding: 0 20vw;"><p style="font-size:20px; color:black;">Our experiment is a task that tests your perspective taking ability.</p>',
   choices: ['Next'],
   };
   timeline.push(instruction_one);
 
   var instruction_two= {
     type: jsPsychHtmlButtonResponse,
-  stimulus: '<p style="font-size:20px; color:black;">Perspective taking ability can be thought of as a measure of <strong>empathetic ability</strong>.</p>',
+  stimulus: '<div style="text-align: left;padding: 0 20vw;"><p style="font-size:20px; color:black;">Perspective taking ability can be thought of as a measure of <strong>empathetic ability</strong>.</p>',
   choices: ['Next'],
   };
   timeline.push(instruction_two);
   var instruction_three= {
     type: jsPsychHtmlButtonResponse,
-  stimulus: '<p style="font-size:20px; color:black;"><p>Spatial ability is a cognitive ability that is defined as understanding the relations between objects in space </p><p> and being able to mentally manipulate them and respond correctly.</p>',
+  stimulus: '<div style="text-align: left;padding: 0 20vw;"><p style="font-size:20px; color:black;"><p>Spatial ability is a cognitive ability that is defined as understanding the relations between objects in space and being able to mentally manipulate them and respond correctly.</p>',
   choices: ['Next'],
   };
   timeline.push(instruction_three);
   var instruction_four= {
     type: jsPsychHtmlButtonResponse,
-  stimulus: '<p style="font-size:20px; color:black;">Previous studies have shown that <strong>females often score higher on measures of empathetic ability</strong>.</p>',
+  stimulus: '<div style="text-align: left;padding: 0 20vw;"><p style="font-size:20px; color:black;">Previous studies have shown that <strong>females often score higher on measures of empathetic ability</strong>.</p>',
   choices: ['Next'],
   };
   timeline.push(instruction_four);
@@ -107,7 +107,7 @@ timeline.push(preload);
   var instruction_spatial = {
     type: jsPsychHtmlButtonResponse,
     stimulus:
-      `<p>In this test, you will be shown a map of a city with a path drawn through it. </p>
+      `'<div style="text-align: left;padding: 0 20vw;"><p>In this test, you will be shown a map of a city with a path drawn through it. </p>
       <p>Imagine yourself taking the perspective of the person on the map. Suppose that one day, you went for walk and followed the path through the city that is shown. </p> 
       <p>At each turn that the path takes, 
       your task is to decide whether you would turn to your right or your left as you are walking. </p>
@@ -123,7 +123,7 @@ timeline.push(preload);
 
   var instruction_practice= {
     type: jsPsychHtmlButtonResponse,
-  stimulus: '<p style="font-size:20px; color:black;">You will first see three practice trials</p><p><p>If it is a <strong> right turn</strong>, click on the <strong> right arrow key</strong>  on your keyboard,</p><p>and if it is a <strong> left turn</strong>, click on the <strong> left arrow key</strong>  on your keyboard.</p> ',
+  stimulus: '<div style="text-align: left;padding: 0 20vw;"><p style="font-size:20px; color:black;">You will first see three practice trials</p><p><p>If it is a <strong> right turn</strong>, click on the <strong> right arrow key</strong>  on your keyboard,</p><p>and if it is a <strong> left turn</strong>, click on the <strong> left arrow key</strong>  on your keyboard.</p> ',
   choices: ['Next'],
   };
   
@@ -143,7 +143,7 @@ var practice_trials = {
 timeline.push(practice_trials);
 var instruction_experiment_trials= {
     type: jsPsychHtmlButtonResponse,
-  stimulus: '<p style="font-size:20px; color:black;"> Now, you will have 30 seconds to complete as many of the 32 trials as you can.',
+  stimulus: '<div style="text-align: left;padding: 0 20vw;"><p style="font-size:20px; color:black;"> Now, you will have 30 seconds to complete as many of the 32 trials as you can.',
   choices: ['Next'],
   };
 timeline.push(instruction_experiment_trials);
@@ -343,7 +343,7 @@ timeline.push(tech_difficulties_question);
 
 var Debrief= {
   type: jsPsychHtmlButtonResponse,
-  stimulus: '<p style="font-size:20px; color:black;"><p>Thanks for participating! In this study the task is framed either as a spatial task (which male participants typically perform better on) or a social task (which female participants typically perform better on). We are looking at the effect of gender bias in problem framing on performance. We ask that you please do not share this information with other potential participants. </p>',
+  stimulus: '<div style="text-align: left;padding: 0 20vw;"><p style="font-size:20px; color:black;"><p>Thanks for participating! In this study the task is framed either as a spatial task (which male participants typically perform better on) or a social task (which female participants typically perform better on). We are looking at the effect of gender bias in problem framing on performance. We ask that you please do not share this information with other potential participants. </p>',
   choices: ['Submit'],
 
   };
