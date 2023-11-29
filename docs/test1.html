@@ -9,6 +9,7 @@
   <script src="https://unpkg.com/@jspsych/plugin-preload@1.1.2"></script>
   <script src="https://unpkg.com/@jspsych-contrib/plugin-pipe"></script>
   <script src="https://unpkg.com/@jspsych/plugin-instructions@1.1.1"></script>
+  <script src="https://unpkg.com/@jspsych/plugin-survey-html-form@1.0.0" type="text/javascript"></script>
   <script src="https://unpkg.com/@jspsych/plugin-image-keyboard-response@1.1.2"></script>
   <script src="https://unpkg.com/@jspsych/plugin-survey-multi-choice@1.1.2"></script>
   <link href="https://unpkg.com/jspsych@7.3.1/css/jspsych.css" rel="stylesheet" type="text/css" />
@@ -70,6 +71,7 @@ timeline.push(preload);
 
   //welcome page
 
+
   var consent = {
     type: jsPsychHtmlButtonResponse,
     stimulus: '<div style="text-align: left;padding: 0 20vw;"><p style="font-size:20px; color:black;"><p>By answering the following questions, you are participating in a study being performed by cognitive scientists in the Stanford Department of Psychology. </p><p>If you have questions about this research, please contact us at stanfordpsych251@gmail.com. </p><p>You must be at least 18 years old to participate. Your participation in this research is voluntary. You may decline to answer any or all of the following questions. You may decline further participation, at any time, without adverse consequences. </p><p>Your anonymity is assured; the researchers who have requested your participation will not receive any personal information about you.</p>',
@@ -93,7 +95,7 @@ timeline.push(preload);
   timeline.push(instruction_two);
   var instruction_three= {
     type: jsPsychHtmlButtonResponse,
-  stimulus: '<div style="text-align: left;padding: 0 20vw;"><p style="font-size:20px; color:black;"><p>Spatial ability is a cognitive ability that is defined as understanding the relations between objects in space and being able to mentally manipulate them and respond correctly.</p>',
+  stimulus: '<div style="text-align: left;padding: 0 20vw;"><p style="font-size:20px; color:black;"><p>Empathetic ability is a social ability that is defined as being able to identify with, and understand what another person is seeing or feeling, and respond appropriately.</p>',
   choices: ['Next'],
   };
   timeline.push(instruction_three);
@@ -103,6 +105,15 @@ timeline.push(preload);
   choices: ['Next'],
   };
   timeline.push(instruction_four);
+
+  var check = {
+    type: jsPsychSurveyHtmlForm,
+    preamble: '<p>Fill in the blanks</p>',
+    html: '<p> <input name="first" type="text" required /> often score higher on measures of <input name="second" type="text" required /> ability.</p>'
+};
+
+timeline.push(check);
+
 
   var instruction_spatial = {
     type: jsPsychHtmlButtonResponse,
@@ -178,7 +189,7 @@ var time_limit = 30000;
         { stimulus: "img/social/version2/19.png",stimulus_height: 800, stimulus_width: 500, correct_response: 'ArrowRight'  },
         { stimulus: "img/social/version2/20.png",stimulus_height: 800, stimulus_width: 500, correct_response: 'ArrowLeft'  },
         { stimulus: "img/social/version2/21.png",stimulus_height: 800, stimulus_width: 500, correct_response: 'ArrowLeft'  },
-        { stimulus: "img/social/version2/22.png",stimulus_height: 800, stimulus_width: 500, correct_response: 'ArrowRight'  },
+        { stimulus: "img/social/version2/22.png",stimulus_height: 800, stimulus_width: 500, correct_response: 'ArrowLeft'  },
         { stimulus: "img/social/version2/23.png",stimulus_height: 800, stimulus_width: 500, correct_response: 'ArrowRight'  },
         { stimulus: "img/social/version2/24.png",stimulus_height: 800, stimulus_width: 500, correct_response: 'ArrowRight'  },
         { stimulus: "img/social/version2/25.png",stimulus_height: 800, stimulus_width: 500, correct_response: 'ArrowLeft'  },
@@ -259,7 +270,7 @@ var last_instruction= {
             },
     
   type: jsPsychHtmlButtonResponse,
-  stimulus: '<p style="font-size:20px; color:black;"><p>You have finished the task - thanks for participating! Three more questions before you go. </p>',
+  stimulus: '<p style="font-size:20px; color:black;"><p>You have finished the task - thanks for participating! A few more questions before you go. </p>',
   choices: ['OK'],
 
   };
@@ -271,6 +282,23 @@ var correctAnswerQ3 = 'Females';
 
 var answeredCorrectlyQ2 = false;
 var answeredCorrectlyQ3 = false;
+
+
+
+var hypothesis_question = {
+  type: jsPsychSurveyText,
+    questions: [
+        {
+            prompt: "<div style='padding: 0 20vw;'>Do you have an idea of what this study is trying to look at? Any guess on our hypothesis? You can share your thoughts in as much or as little detail as you like. It's also completely okay if you don't have any ideas about this; you can leave this section empty if you prefer.",
+            name: 'Hypothesis',
+            rows: 4, // You can adjust the number of rows for the text area
+            columns: 40, // And the number of columns
+        
+        }
+    ],
+    button_label: 'Submit'
+};
+timeline.push(hypothesis_question);
 
 var Question1 = {
   type: jsPsychSurveyMultiChoice,
@@ -334,6 +362,7 @@ var tech_difficulties_question = {
             name: 'technicalDifficulties',
             rows: 4, // You can adjust the number of rows for the text area
             columns: 40 // And the number of columns
+          
         }
     ],
     button_label: 'Submit'
@@ -345,6 +374,7 @@ var Debrief= {
   type: jsPsychHtmlButtonResponse,
   stimulus: '<div style="text-align: left;padding: 0 20vw;"><p style="font-size:20px; color:black;"><p>Thanks for participating! In this study the task is framed either as a spatial task (which male participants typically perform better on) or a social task (which female participants typically perform better on). We are looking at the effect of gender bias in problem framing on performance. We ask that you please do not share this information with other potential participants. </p>',
   choices: ['Submit'],
+  
 
   };
 

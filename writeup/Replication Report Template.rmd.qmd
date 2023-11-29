@@ -142,57 +142,62 @@ library(tidyr)
 
 
 #### Import data
-files <- list.files(path="~/Desktop/tarampi2016_rescue/pilot data/", full.names = TRUE)
+files <-list.files(path = "~/Desktop/tarampi2016_rescue/pilotb data/", full.names = TRUE)
 # read in and combine all the CSV files using bind_rows()
 combined_data <- lapply(files, function(filepath) {
   df <- read.csv(filepath)
   return(df)
-})%>%
+}) %>%
   bind_rows()
 
 #### Data exclusion / filtering
 # exclude unwanted columns and rows
 organized.data <- combined_data %>%
-  select("subject_id", "stimulus","response", "condition", "correct") %>%
-  filter (response != 0 ) %>%
-  filter (subject_id != "na")
+  select("workerid",
+         "stimulus",
+         "response",
+         "condition",
+         "correct",
+         "bothQuestionsCorrect") %>%
+  filter (response != 0) %>%
+  filter (workerid != "na")
 
 
 #### Prepare data for analysis - create columns etc.
 correct_counts <- organized.data %>%
-  mutate(gender = case_when(response == '{"sex":"Female"}' ~ "Female",
-                            response == '{"sex":"Male"}' ~ "Male",
-                            response == '{"sex":"Other"}' ~ "Other"))
+  mutate(gender_extracted = gsub("^.*'sex': '([A-Za-z]+)'.*$", "\\1", response)) %>%  # Extract gender value
+  mutate(gender = ifelse(
+    gender_extracted %in% c("Female", "Male", "Other"),
+    gender_extracted,
+    NA
+  ))
 
-
-ready_data <-correct_counts%>%
-  group_by(subject_id,) %>%
-  mutate(correct_count = sum(correct, na.rm=TRUE))%>%
-  filter(is.na(gender)==FALSE)
+ready_data <- correct_counts %>%
+  group_by(workerid) %>%
+  mutate(correct_count = sum(correct == "True", na.rm = TRUE)) %>%
+  filter(is.na(gender) == FALSE)
 
 graph_data = ready_data %>%
   group_by(condition, gender) %>%
-  mutate(mean_correct = mean(correct_count), mean_sem = sd(correct_count) / sqrt(n()))
+  mutate(mean_correct = mean(correct_count),mean_sem = sd(correct_count) / sqrt(n())
+  )
 
 
 #descriptive statistics
-ggplot(data = graph_data, aes(x = group, y = mean_correct, fill = condition)) + 
-   # Dodge the bars based on condition
-   geom_col(position = "dodge", width = 0.5) +
-   # Dodge the error bars as well
-   geom_errorbar(
-       aes(ymin = mean_correct - mean_sem, ymax = mean_correct + mean_sem), 
-       width = 0.2, position = position_dodge(0.5)) +
-   # Dodge the text labels, too
-   geom_text(aes(label = sprintf("%.2f", mean_correct)), vjust = -1.2, position = position_dodge(0.5))
-
-
-
-
+ggplot(data = graph_data, aes(x = gender, y = mean_correct, fill = condition)) +
+  # Dodge the bars based on condition
+  geom_col(position = "dodge", width = 0.5) +
+  # Dodge the error bars as well
+  geom_errorbar(
+    aes(ymin = mean_correct - mean_sem, ymax = mean_correct + mean_sem),
+    width = 0,
+    position = position_dodge(0.5)
+  )
 
   
 
 ```
+
 
 ### Results of control measures
 
@@ -206,7 +211,37 @@ anova<- aov(correct_count ~ gender * condition, data = ready_data)
 summary(anova)
 ```
 
+```{r}
+###T-Tests
+sem <- function(x) {sd(x, na.rm=TRUE) / sqrt(sum(!is.na((x))))}
+ci <- function(x) {sem(x) * 1.96} 
 
+####Female Score By Condition
+female_data <- ready_data %>%
+  subset(gender=='Female')
+female_summary <- female_data %>%
+  group_by(condition) %>%
+  summarise(mean = mean(correct_count), sd = sd(correct_count), ci_lower = mean(correct_count) - ci(correct_count), ci_upper = mean(correct_count) + ci(correct_count))
+t.test(correct_count ~ condition, data = female_data, var.equal = TRUE)
+
+####Male Score By Condition
+male_data <- ready_data %>%
+  subset(gender=='Male')
+male_summary <- male_data %>%
+  group_by(condition) %>%
+  summarise(mean = mean(correct_count), sd = sd(correct_count), ci_lower = mean(correct_count) - ci(correct_count), ci_upper = mean(correct_count) + ci(correct_count))
+t.test(correct_count ~ condition, data = male_data, var.equal = TRUE)
+
+####Spatial Score By Sex
+spatial_data = ready_data %>%
+  subset(condition=='spatial')
+t.test(correct_count ~ gender, data = spatial_data, var.equal = TRUE)
+
+####Social Score By Sex
+social_data = ready_data %>%
+  subset(condition=='social')
+t.test(correct_count ~ gender, data = social_data, var.equal = TRUE)
+```
 
 *Three-panel graph with original, 1st replication, and your replication is ideal here*
 
