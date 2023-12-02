@@ -37,22 +37,24 @@ The prior replication attempt made four main changes compared to the original st
 
 Original effect size, power analysis for samples to achieve 80%, 90%, 95% power to detect that effect size.  Considerations of feasibility for selecting planned sample size.
 
-How much power does your planned sample have for original effect? For an attenuated effect that is half the size of the original? 
+The original effect size for the interaction of interest is a partial eta squared equal to 0.03. A power analysis for 80% suggests a sample size of 256. A power analysis for 90% suggests a sample size of 342.A power analysis for 95% suggests a sample size of 423.
 
-(If power analysis is not possible or precise, discuss more fully how you determined a sample size that would be sufficient for rescue.)
 
 ### Planned Sample
 
-The sample size will be determined after the power analysis.
-The age range of the participants will be 18-22 to match that in the original study. The study must also be done on Laptops. 
+Based on the fact that the sample size of 256  gives us 80% power and that some participant data might be excluded according to the exclusion criteria (which I think will be around 10%), I plan to run a sample of 282.
 
-The original study did not specify any exclusion criterion. I’m considering excluding participants who do not label any corner or whose accuracy rate is below chance since it signals low effort in the study. 
+The age range of this study has been adjusted to encompass individuals aged 18 to 25. This is a slight expansion from the initial study's age range of 18 to 22, still ensuring the study focuses on young adult demographics.
+
+The study must also be done on Laptops. 
+
+The original study did not specify any exclusion criterion. I will exclude participants (post data collection) who failed the comprehension check, who accurately guessed the study's hypothesis, or who clearly showed no effort in the task (participants who labeled no corner or participants whose accuracy was below 10%).
 
 ### Materials
 
 In the original study, “the experiment consisted of two timed pencil-and-paper tests of perspective-taking ability: the object-perspective/spatial-orientation test (Hegarty & Waller, 2004) and the standardized road-map test of direction sense (the road-map test; Money et al., 1965; modified by Zacks et al., 2002)…The road-map test consisted of a bird’s-eye diagram of a path through a city. Participants were instructed to imagine walking along the path and write either “R” or “L” at each corner to indicate whether to take a right or left turn. The social version of the task included a human figure at every corner (see Fig. 2, right panel). Participants in the social condition were instructed to imagine themselves taking the perspective of the person as he or she walked along the path. Their score was the number of corners labeled correctly.”
 
-In this rescue project, I will follow the first replication attempt and only focus on the road-map test. In the first replication attempt, participants labeled corners using drop-down menus to indicate either turning left or right. The experimenter expressed concerns about the extra cognitive load related to interacting with the drop-down menus. Therefore, I plan to change the drop-down menus to clicking the right or the left arrow key on the keyboard. Instead of showing the complete roadmap at once, I'm also considering showing it trial by trial (meaning each trial shows one corner or a few corners). This will be decided after the pilot study.
+In this rescue project, I will follow the first replication attempt and only focus on the road-map test. In the first replication attempt, participants labeled corners using drop-down menus to indicate either turning left or right. The experimenter expressed concerns about the extra cognitive load related to interacting with the drop-down menus. Therefore, I plan to change the drop-down menus to clicking the right or the left arrow key on the keyboard. Instead of showing the complete roadmap at once, I'm showing a smaller portion of the map on each trial. 
 
 The code for the replication study was in Javascript, HTML, and CSS. Only partial codes are available, and there is no code for data collection, so I plan to recreate the study with jsPsych. 
 
@@ -66,17 +68,23 @@ Perspective-taking ability can be thought of as a measure of spatial ability. Sp
 
 Participants in the social condition were given modified tests, which included human figures, and received the following additional information, which emphasized that perspective-taking is an empathetic ability in which women have an advantage over men: 
 
-Perspective-taking ability can be thought of as a measure of empathetic ability. Empathetic ability is a social ability that is defined as being able to identify with and understand what another person is seeing or feeling, and respond appropriately. Females often score higher on measures of empathetic ability.”
+Perspective-taking ability can be thought of as a measure of empathetic ability. Empathetic ability is a social ability that is defined as being able to identify with and understand what another person is seeing or feeling, and respond appropriately. Females often score higher on measures of empathetic ability."
 
-The above-mentioned instructions will appear line by line on the screen. Participants will be instructed to read carefully and click the “next” button to go to the next sentence. This is different from the previous replication attempt, and the goal is to achieve a more effective state induction. 
+The above-mentioned instructions will appear line by line on the screen. Participants will be instructed to read carefully and click the "next" button to go to the next sentence. This is different from the previous replication attempt, and the goal is to achieve a more effective state induction. 
+
+After that, participants will be presented with a comprehension check: 
+
+fill in the blank: _____often score higher on measures of ______ ability.
 
 The participants then complete the road-map test. In the road-map test, participants will be first given the instruction and complete an untimed practice trial where they are expected to indicate three corner turns correctly.  
 
-Once they completed the practice trial, they will be given 30 s to complete as many of the 32 items as possible. 
+Once they complete the practice trial, they will be given 30 seconds to complete as many of the 32 items as possible. 
 
-At the end of the study, instead of asking for participants’ CS experience as the experiment did in the first replication attempt, I plan to do a manipulation check that probes whether the state induction of gender bias has been effective.
+At the end of the study, instead of asking for participants' CS experience as the experiment did in the first replication attempt, I plan to first ask a question looking at participants' thoughts on the purpose of the study. If participants' guesses about the study closely aligned with the study's hypothesis (meaning that they explicitly mentioned something along the lines of gender threat, framing perspective-taking tasks differently for different gender groups, etc...).
 
-So, after completing the road-map test, two multiple-choice questions will appear on the screen. 
+Then, there will be a question asking about their gender, a manipulation check that probes whether the state induction of gender bias has been effective.
+
+For the manipulation check, two multiple-choice questions will appear on the screen. 
 
 Please fill in the blank based on the information you saw at the beginning of the experiment. 
 
@@ -84,17 +92,18 @@ Please fill in the blank based on the information you saw at the beginning of th
 
 2.	_________ (Choice1: females. Choice 2: males) often score higher on measures of empathetic/spatial (depending on the condition) ability 
 
+The last question will ask whether they have encountered any tech difficulties during the study. 
 
 ### Controls
 
-The fact that the participant needs to click the next button to proceed to the next sentence in the instruction functions as an attention check. Additionally, participants need to correctly complete the practice trial in order to proceed. 
+The fact that the participant needs to click the next button to proceed to the next sentence in the instruction functions as an attention check. 
 
 ### Analysis Plan
 
-The analysis will be a 2 (sex: male, female) X 2 (condition: social, spatial) between-subject analysis of variance (ANOVA). 
-The original study did not exclude any data based on participants’ performance in the road-map test. However, I’m considering excluding participants who clearly did not put in the effort (ex., did not label any corner or whose accuracy rate was below chance).
+The analysis will be a 2 (sex: male, female) X 2 (condition: social, spatial) between-subject analysis of variance (ANOVA). The dependent measure of the key task is the number of corners that a participant correctly labeled. For the ANOVA test, I'm mainly interested in the interaction effect.
 
-Additionally, a t-test will be done to see whether the state induction was effective.
+The original study did not exclude any data based on participants’ performance in the road-map test. However, I’m excluding participants who failed the comprehension check, who guessed the study's hypothesis, or who clearly did not put in effort for the task (ex., did not label any corner or whose accuracy rate was below 10%).
+
 
 
 ### Differences from Original Study and 1st replication
