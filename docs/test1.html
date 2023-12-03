@@ -107,17 +107,18 @@ timeline.push(preload);
   timeline.push(instruction_four);
 
   var check = {
-    type: jsPsychSurveyHtmlForm,
-    preamble: '<p>Fill in the blanks</p>',
-    html: '<p> <input name="first" type="text" required /> often score higher on measures of <input name="second" type="text" required /> ability.</p>',
-    on_finish: function(data) {
-    var checkResponse = data.response.check;
+  type: jsPsychSurveyHtmlForm,
+  preamble: '<p>Fill in the blanks</p>',
+  html: '<p> <input name="first" type="text" required /> often score higher on measures of <input name="second" type="text" required /> ability.</p>',
+  on_finish: function(data) {
+    var firstResponse = data.response.first;
+    var secondResponse = data.response.second;
     jsPsych.data.addProperties({
-      "comprehension_check": checkResponse
+      "first": firstResponse,
+      "second": secondResponse
     });
   }
 };
-
 
 timeline.push(check);
 

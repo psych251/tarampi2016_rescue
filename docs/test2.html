@@ -109,9 +109,11 @@ timeline.push(preload);
     preamble: '<p>Fill in the blanks</p>',
     html: '<p> <input name="first" type="text" required /> often score higher on measures of <input name="second" type="text" required /> ability.</p>',
     on_finish: function(data) {
-    var checkResponse = data.response.check;
+    var firstResponse = data.response.first;
+    var secondResponse = data.response.second;
     jsPsych.data.addProperties({
-      "comprehension_check": checkResponse
+      "first": firstResponse,
+      "second": secondResponse
     });
   }
 };
