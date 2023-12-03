@@ -42,13 +42,13 @@ The original effect size for the interaction of interest is a partial eta square
 
 ### Planned Sample
 
-Based on the fact that the sample size of 256  gives us 80% power and that some participant data might be excluded according to the exclusion criteria (which I think will be around 10%), I plan to run a sample of 282.
+Based on the fact that the sample size of 256  gives us 80% power and that some participant data might be excluded according to the exclusion criteria (which I think will be around 10%), I plan to have a sample size of 282 participants.
 
 The age range of this study has been adjusted to encompass individuals aged 18 to 25. This is a slight expansion from the initial study's age range of 18 to 22, still ensuring the study focuses on young adult demographics.
 
 The study must also be done on Laptops. 
 
-The original study did not specify any exclusion criterion. I will exclude participants (post data collection) who failed the comprehension check, who accurately guessed the study's hypothesis, or who clearly showed no effort in the task (participants who labeled no corner or participants whose accuracy was below 10%).
+The original study did not specify any exclusion criterion. I will exclude participants (post data collection) who failed the comprehension check, who accurately guessed the study's hypothesis (explicitly mentioned stereotype threat, or anything about framing the perspective- taking task differently for different gender group), or who clearly put no effort in the task (participants who labeled no corner or participants whose accuracy was below 20%).
 
 ### Materials
 
@@ -102,7 +102,7 @@ The fact that the participant needs to click the next button to proceed to the n
 
 The analysis will be a 2 (sex: male, female) X 2 (condition: social, spatial) between-subject analysis of variance (ANOVA). The dependent measure of the key task is the number of corners that a participant correctly labeled. For the ANOVA test, I'm mainly interested in the interaction effect.
 
-The original study did not exclude any data based on participants’ performance in the road-map test. However, I’m excluding participants who failed the comprehension check, who guessed the study's hypothesis, or who clearly did not put in effort for the task (ex., did not label any corner or whose accuracy rate was below 10%).
+The original study did not exclude any data based on participants’ performance in the road-map test. However, I’m excluding participants who failed the comprehension check, who guessed the study's hypothesis, or who clearly did not put in effort for the task (ex., did not label any corner or whose accuracy rate was below 20%).
 
 
 
@@ -180,6 +180,11 @@ correct_counts <- organized.data %>%
     gender_extracted,
     NA
   ))
+
+precentage_correct <- correct_counts %>%
+  group_by(workerid)%>%
+  mutate(correct_percent = (sum (correct == "True"))/(sum (correct == "True") + sum (correct == "False")))
+
 
 ready_data <- correct_counts %>%
   group_by(workerid) %>%

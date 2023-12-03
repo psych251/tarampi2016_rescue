@@ -107,8 +107,16 @@ timeline.push(preload);
   var check = {
     type: jsPsychSurveyHtmlForm,
     preamble: '<p>Fill in the blanks</p>',
-    html: '<p> <input name="first" type="text" required /> often score higher on measures of <input name="second" type="text" required /> ability.</p>'
+    html: '<p> <input name="first" type="text" required /> often score higher on measures of <input name="second" type="text" required /> ability.</p>',
+    on_finish: function(data) {
+    var checkResponse = data.response.check;
+    jsPsych.data.addProperties({
+      "comprehension_check": checkResponse
+    });
+  }
 };
+
+
 
 timeline.push(check);
 
@@ -304,7 +312,14 @@ var Question1 = {
       required: true
     }
   ],
+  on_finish: function(data) {
+    var genderResponse = data.response.sex;
+    jsPsych.data.addProperties({
+      "gender": genderResponse
+    });
+  }
 };
+
 timeline.push(Question1);
 var Question2 = {
   type: jsPsychSurveyMultiChoice,
@@ -358,6 +373,13 @@ var tech_difficulties_question = {
             columns: 40 // And the number of columns
         }
     ],
+    on_finish: function(data) {
+    var techDiffResponse = data.response.technicalDifficulties;
+    jsPsych.data.addProperties({
+      "tech_difficulty": techDiffResponse
+    });
+  },
+
     button_label: 'Submit'
 };
 timeline.push(tech_difficulties_question);
