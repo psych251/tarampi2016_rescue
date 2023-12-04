@@ -102,7 +102,7 @@ The fact that the participant needs to click the next button to proceed to the n
 
 The analysis will be a 2 (sex: male, female) X 2 (condition: social, spatial) between-subject analysis of variance (ANOVA). The dependent measure of the key task is the number of corners that a participant correctly labeled. For the ANOVA test, I'm mainly interested in the interaction effect.
 
-The original study did not exclude any data based on participants’ performance in the road-map test. However, I’m excluding participants who failed the comprehension check, who guessed the study's hypothesis, or who clearly did not put in effort for the task (ex., did not label any corner or whose accuracy rate was below 20%).
+The original study did not exclude any data based on participants’ performance in the road-map test. However, I’m excluding participants who failed the comprehension check, who guessed the study's hypothesis, or who clearly did not put in effort for the task (ex., did not label any corner or whose accuracy rate was below 55%).
 
 
 
@@ -147,6 +147,7 @@ library(ggplot2)
 library(ez)
 library(osfr)
 library(tidyr)
+library(stringr)
 
 
 
@@ -163,30 +164,27 @@ combined_data <- lapply(files, function(filepath) {
 # exclude unwanted columns and rows
 organized.data <- combined_data %>%
   select("workerid",
-         "stimulus",
-         "response",
          "condition",
+         "stimulus",
          "correct",
+         "response",
+         "gender",
+         "first",
+         "second",
+         "tech_difficulty",
+         "participant_hypothesis",
          "bothQuestionsCorrect") %>%
   filter (response != 0) %>%
   filter (workerid != "na")
 
 
-#### Prepare data for analysis - create columns etc.
-correct_counts <- organized.data %>%
-  mutate(gender_extracted = gsub("^.*'sex': '([A-Za-z]+)'.*$", "\\1", response)) %>%  # Extract gender value
-  mutate(gender = ifelse(
-    gender_extracted %in% c("Female", "Male", "Other"),
-    gender_extracted,
-    NA
-  ))
-
-precentage_correct <- correct_counts %>%
+#### Prepare data for analysis - create columns that calculates the percentage of correct answers etc.
+precentage_correct <- organized.data %>%
   group_by(workerid)%>%
   mutate(correct_percent = (sum (correct == "True"))/(sum (correct == "True") + sum (correct == "False")))
 
 
-ready_data <- correct_counts %>%
+ready_data <- precentage_correct %>%
   group_by(workerid) %>%
   mutate(correct_count = sum(correct == "True", na.rm = TRUE)) %>%
   filter(is.na(gender) == FALSE)
