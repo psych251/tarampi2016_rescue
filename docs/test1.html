@@ -304,13 +304,14 @@ var hypothesis_question = {
         
         }
     ],
-    button_label: 'Submit',
+  
     on_finish: function(data) {
     var hypothesisResponse = data.response.Hypothesis;
     jsPsych.data.addProperties({
       "participant_hypothesis": hypothesisResponse
     });
-  }
+  },
+  button_label: 'Submit'
 };
     
 
