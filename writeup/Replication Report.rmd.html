@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Chuqi Hu (chuqihu@stanford.edu)">
+<meta name="dcterms.date" content="2024-04-17">
+
+<title>Replication of Experiment 1: perspective-taking tasks by Tamrapi, Heydari &amp; Hegarty (2016, Psychological Science)</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="Replication Report.rmd_files/libs/clipboard/clipboard.min.js"></script>
+<script src="Replication Report.rmd_files/libs/quarto-html/quarto.js"></script>
+<script src="Replication Report.rmd_files/libs/quarto-html/popper.min.js"></script>
+<script src="Replication Report.rmd_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="Replication Report.rmd_files/libs/quarto-html/anchor.min.js"></script>
+<link href="Replication Report.rmd_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="Replication Report.rmd_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="Replication Report.rmd_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="Replication Report.rmd_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="Replication Report.rmd_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body>
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#summary-of-prior-replication-attempt" id="toc-summary-of-prior-replication-attempt" class="nav-link" data-scroll-target="#summary-of-prior-replication-attempt">Summary of prior replication attempt</a></li>
+  <li><a href="#methods" id="toc-methods" class="nav-link" data-scroll-target="#methods">Methods</a>
+  <ul class="collapse">
+  <li><a href="#power-analysis" id="toc-power-analysis" class="nav-link" data-scroll-target="#power-analysis">Power Analysis</a></li>
+  <li><a href="#planned-sample" id="toc-planned-sample" class="nav-link" data-scroll-target="#planned-sample">Planned Sample</a></li>
+  <li><a href="#materials" id="toc-materials" class="nav-link" data-scroll-target="#materials">Materials</a></li>
+  <li><a href="#procedure" id="toc-procedure" class="nav-link" data-scroll-target="#procedure">Procedure</a></li>
+  <li><a href="#controls" id="toc-controls" class="nav-link" data-scroll-target="#controls">Controls</a></li>
+  <li><a href="#analysis-plan" id="toc-analysis-plan" class="nav-link" data-scroll-target="#analysis-plan">Analysis Plan</a></li>
+  <li><a href="#differences-from-original-study-and-1st-replication" id="toc-differences-from-original-study-and-1st-replication" class="nav-link" data-scroll-target="#differences-from-original-study-and-1st-replication">Differences from Original Study and 1st replication</a></li>
+  <li><a href="#methods-addendum-post-data-collection" id="toc-methods-addendum-post-data-collection" class="nav-link" data-scroll-target="#methods-addendum-post-data-collection">Methods Addendum (Post Data Collection)</a></li>
+  </ul></li>
+  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a>
+  <ul class="collapse">
+  <li><a href="#data-preparation" id="toc-data-preparation" class="nav-link" data-scroll-target="#data-preparation">Data preparation</a></li>
+  <li><a href="#results-of-control-measures" id="toc-results-of-control-measures" class="nav-link" data-scroll-target="#results-of-control-measures">Results of control measures</a></li>
+  <li><a href="#confirmatory-analysis" id="toc-confirmatory-analysis" class="nav-link" data-scroll-target="#confirmatory-analysis">Confirmatory analysis</a></li>
+  <li><a href="#exploratory-analyses" id="toc-exploratory-analyses" class="nav-link" data-scroll-target="#exploratory-analyses">Exploratory analyses</a></li>
+  </ul></li>
+  <li><a href="#discussion" id="toc-discussion" class="nav-link" data-scroll-target="#discussion">Discussion</a></li>
+  <li><a href="#mini-meta-analysis" id="toc-mini-meta-analysis" class="nav-link" data-scroll-target="#mini-meta-analysis">Mini meta analysis</a>
+  <ul class="collapse">
+  <li><a href="#summary-of-replication-attempt" id="toc-summary-of-replication-attempt" class="nav-link" data-scroll-target="#summary-of-replication-attempt">Summary of Replication Attempt</a></li>
+  <li><a href="#commentary" id="toc-commentary" class="nav-link" data-scroll-target="#commentary">Commentary</a></li>
+  </ul></li>
+  </ul>
+</nav>
+</div>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Replication of Experiment 1: perspective-taking tasks by Tamrapi, Heydari &amp; Hegarty (2016, Psychological Science)</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Chuqi Hu (chuqihu@stanford.edu) </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">April 17, 2024</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+</header>
+
+<!-- Replication reports should all use this template to standardize reporting across projects.  These reports will be public supplementary materials that accompany the summary report(s) of the aggregate results. -->
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>The construct of interest in the study is perspective-taking ability. Experiment 1 of Tarampi’s (2016) paper explored how stereotype threat contributes to gender differences in perspective-taking task performances. The researchers found that framing the same task as a spatial or a social task will lead to different performances in men and women. More specifically, they found that women tended to perform better when the same task was framed as a social perspective-taking task rather than a spatial one.</p>
+<p>Tarampi(2016) used two tests in their experiment: the spatial orientation test and the road-map test. All the materials can be found on <a href="https://osf.io/7qu6s/">OSF</a>. Participants were tested in person, individually, or in a group of 2-8 people of the same sex. The current replication attempt will focus on the road-map test, adapting it to an online version. In this task, participants will be presented with a map navigation task, where they are asked to label corners to indicate right or left turns. This task will be framed either as a spatial or social task. We are interested in the number of correct labeling across conditions and among the two gender groups.</p>
+<p>Below are links to related materials:</p>
+<p><a href="https://github.com/psych251/tarampi2016_rescue">GitHub repository</a></p>
+<p><a href="https://github.com/psych251/tarampi2016_rescue/blob/b3d6e7d926d3fa4e1370badfc73cf76629088592/original_paper/tarampi-et-al-2016-a-tale-of-two-types-of-perspective-taking-sex-differences-in-spatial-ability.pdf">Original paper</a></p>
+<p><a href="https://osf.io/s59kr/">Pre-registration</a></p>
+<p>Experiments:</p>
+<p><a href="https://psych251.github.io/tarampi2016_rescue/test2.html">Spatial condition</a></p>
+<p><a href="https://psych251.github.io/tarampi2016_rescue/test1.html">Social condition</a></p>
+</section>
+<section id="summary-of-prior-replication-attempt" class="level2">
+<h2 class="anchored" data-anchor-id="summary-of-prior-replication-attempt">Summary of prior replication attempt</h2>
+<p>The prior replication attempt made four main changes compared to the original study.</p>
+<ol type="1">
+<li><p>The original study was conducted in person, and participants were tested individually or in same-sex groups of 2 to 8 participants. The prior replication attempt converted the study to an online format, and participants were tested individually. A concern the replication experimenter raised is whether state induction of gender bias was effective in the online environment.</p></li>
+<li><p>Participants of the original study were 139 undergraduate students at UC Santa Barbara. The prior replication was done with 255 Mechanical Turk workers whose demographics weren’t specified in the report, so we don’t know if the demographics differ a lot in terms of age and background.</p></li>
+<li><p>The original study consisted of three parts: two timed pencil-and-paper tests of perspective-taking ability (the object-perspective/spatial orientation test (Hegarty &amp; Waller, 2004) and the road-map test (Money et al., 1965; modified by Zacks et al., 2002)) and a questionnaire that aims to measure autistic trait in adults. The prior replication attempt only kept the road-map test in order to collect more data of interest. They also included two questions at the end of the experiment, one asking about the participant’s prior CS experience and the other asking about participants’ assessment of their math ability.</p></li>
+<li><p>No description of the exclusion criterion was mentioned in the original paper. The experimenter of the replication attempt did two sets of data analyses using a light exclusion criterion (excluding participants who labeled no corner) and a strict exclusion criterion (excluding those with less than 60% accuracy). The original results did not replicate in either one.</p></li>
+</ol>
+</section>
+<section id="methods" class="level2">
+<h2 class="anchored" data-anchor-id="methods">Methods</h2>
+<section id="power-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="power-analysis">Power Analysis</h3>
+<p>The original effect size for the interaction of interest is a partial eta squared equal to 0.03. A power analysis for 80% suggests a sample size of 256. A power analysis for 90% suggests a sample size of 342.A power analysis for 95% suggests a sample size of 423.</p>
+</section>
+<section id="planned-sample" class="level3">
+<h3 class="anchored" data-anchor-id="planned-sample">Planned Sample</h3>
+<p>Based on the fact that the sample size of 256 gives us 80% power and that some participant data might be excluded according to the exclusion criteria (which we think will be around 10%), we plan to have a sample size of 282 participants.</p>
+<p>The age range of this study has been adjusted to encompass individuals aged 18 to 25. This is a slight expansion from the initial study’s age range of 18 to 22, still ensuring the study focuses on young adult demographics.</p>
+<p>The study must also be done on Laptops.</p>
+<p>The original study did not specify any exclusion criterion. We will exclude participants (post data collection) who failed the comprehension check, who accurately guessed the study’s hypothesis (explicitly mentioned stereotype threat, or anything about framing the perspective-taking task differently for different gender group), or who clearly put no effort in the task (participants who labeled no corner or participants whose accuracy was below 20%).</p>
+</section>
+<section id="materials" class="level3">
+<h3 class="anchored" data-anchor-id="materials">Materials</h3>
+<p>In the original study, “the experiment consisted of two timed pencil-and-paper tests of perspective-taking ability: the object-perspective/spatial-orientation test (Hegarty &amp; Waller, 2004) and the standardized road-map test of direction sense (the road-map test; Money et al., 1965; modified by Zacks et al., 2002). The road-map test consisted of a bird’s-eye diagram of a path through a city. Participants were instructed to imagine walking along the path and write either “R” or “L” at each corner to indicate whether to take a right or left turn. The social version of the task included a human figure at every corner. Participants in the social condition were instructed to imagine themselves taking the perspective of the person as he or she walked along the path. Their score was the number of corners labeled correctly.” <img src="condition%20graph.jpg" class="img-fluid" alt="conditions"></p>
+<p>In this rescue project, we will follow the first replication attempt and only focus on the road-map test. In the first replication attempt, participants labeled corners using drop-down menus to indicate either turning left or right. The experimenter expressed concerns about the extra cognitive load related to interacting with the drop-down menus. Therefore, we plan to change the drop-down menus to clicking the right or the left arrow key on the keyboard. Instead of showing the complete roadmap at once, a smaller portion of the map will be shown on each trial.</p>
+<p>The code for the replication study was in Javascript, HTML, and CSS. Only partial codes are available, and there is no code for data collection. Thus, the study will be recreated using jsPsych.</p>
+</section>
+<section id="procedure" class="level3">
+<h3 class="anchored" data-anchor-id="procedure">Procedure</h3>
+<p>Participants will be tested individually online. In both conditions, participants will be told that they will complete a task that will test their perspective-taking ability.</p>
+<p>“Participants in the spatial condition were given unmodified tests and also received the following information, which emphasized that perspective-taking is a spatial ability in which men have an advantage over women:</p>
+<p>Perspective-taking ability can be thought of as a measure of spatial ability. Spatial ability is a cognitive ability that is defined as understanding the relations between objects in space and being able to mentally manipulate them and respond correctly. Males often score higher on measures of spatial ability.</p>
+<p>Participants in the social condition were given modified tests, which included human figures, and received the following additional information, which emphasized that perspective-taking is an empathetic ability in which women have an advantage over men:</p>
+<p>Perspective-taking ability can be thought of as a measure of empathetic ability. Empathetic ability is a social ability that is defined as being able to identify with and understand what another person is seeing or feeling, and respond appropriately. Females often score higher on measures of empathetic ability.”</p>
+<p>The above-mentioned instructions will appear line by line on the screen. Participants will be instructed to read carefully and click the “next” button to go to the next sentence. This is different from the previous replication attempt, and the goal is to achieve a more effective state induction.</p>
+<p>After that, participants will be presented with a comprehension check:</p>
+<p>fill in the blank: ______ often score higher on measures of ______ ability.</p>
+<p>The participants then complete the road-map test. In the road-map test, participants will be first given the instruction and complete an untimed practice trial where they are expected to indicate three corner turns correctly.</p>
+<p>Once they complete the practice trial, they will be given 30 seconds to complete as many of the 32 items as possible.</p>
+<p>At the end of the study, instead of asking for participants’ CS experience as the experiment did in the first replication attempt, we plan to first ask a question probing participants’ thoughts on the purpose of the study. If participants’ guesses about the study closely aligned with the study’s hypothesis (meaning that they explicitly mentioned something along the lines of gender threat, framing perspective-taking tasks differently for different gender groups, etc…), their data will be excluded for concerns of performance reflecting demand characteristics.</p>
+<p>Then, there will be a question asking about their gender, a manipulation check that probes whether the state induction of gender bias has been effective.</p>
+<p>For the manipulation check, two multiple-choice questions will be shown.</p>
+<ol type="1">
+<li><p>Perspective-taking ability can be thought of as a measure of ______(Choice1: spatial ability. Choice 2: empathetic ability)</p></li>
+<li><p>______ (Choice1: Females. Choice 2: Males) often score higher on measures of empathetic/spatial (depending on the condition) ability</p></li>
+</ol>
+<p>The last question will ask whether they have encountered any tech difficulties during the study.</p>
+</section>
+<section id="controls" class="level3">
+<h3 class="anchored" data-anchor-id="controls">Controls</h3>
+<p>The fact that the participant needs to click the next button to proceed to the next sentence in the instruction functions as an attention check.</p>
+</section>
+<section id="analysis-plan" class="level3">
+<h3 class="anchored" data-anchor-id="analysis-plan">Analysis Plan</h3>
+<p>The analysis will be a 2 (sex: male, female) X 2 (condition: social, spatial) between-subject analysis of variance (ANOVA). The dependent measure of the key task is the number of corners that a participant correctly labeled. For the ANOVA test, we are mainly interested in the interaction effect.</p>
+<p>The original study did not exclude any data based on participants’ performance in the road-map test. However, we’re excluding participants who failed the comprehension check, who guessed the study’s hypothesis, or who clearly did not put in effort for the task (ex., did not label any corner or whose accuracy rate was below 55%).</p>
+</section>
+<section id="differences-from-original-study-and-1st-replication" class="level3">
+<h3 class="anchored" data-anchor-id="differences-from-original-study-and-1st-replication">Differences from Original Study and 1st replication</h3>
+<p>This study aims to convert the original study to an online format, which is in line with the 1st replication attempt. However, it differs from the 1st replication mainly in five ways:</p>
+<ol type="1">
+<li><p>Instead of showing the instructions in one paragraph, we plan to show the instructions line by line to reflect real-time communication.</p></li>
+<li><p>Instead of asking the participant to select “right” or “left” from a drop-down menu, we plan to let them use the arrow keys to indicate direction.</p></li>
+<li><p>We plan to show a smaller portion of the map on each trial.</p></li>
+<li><p>Unlike the 1st replication, which introduced additional questions probing participants’ CS and math background, we plan to include a comprehension check and ask questions that probe whether the state induction succeeded. This is to address one of the main concerns from the previous replication.</p></li>
+<li><p>Unlike the original study (which had no exclusion criteria) or the 1st replication (which had two sets of exclusion criteria), we plan to apply exclusion criteria to filter out the data from participants who clearly did not put effort into their answering.</p></li>
+</ol>
+</section>
+<section id="methods-addendum-post-data-collection" class="level3">
+<h3 class="anchored" data-anchor-id="methods-addendum-post-data-collection">Methods Addendum (Post Data Collection)</h3>
+<section id="actual-sample" class="level4">
+<h4 class="anchored" data-anchor-id="actual-sample">Actual Sample</h4>
+<p>We successfully collected data from 269 participants (132 females:72 social, 60 spatial; 136 males: 64 social, 72 spatial; 1 non-binary: spatial). We exclude the single non-binary participant because this group does not have sufficient data. Following the pre-registered exclusion criteria, we excluded 21 participants who failed the comprehension check, 3 who correctly guessed the study’s hypothesis, and 82 who had an accuracy rate below 55%. After excluding the participants, our data set includes 166 participants (67 females: 42 social, 25 spatial; 99 males: 50 social, 49 spatial).</p>
+</section>
+<section id="differences-from-pre-data-collection-methods-plan" class="level4">
+<h4 class="anchored" data-anchor-id="differences-from-pre-data-collection-methods-plan">Differences from pre-data collection methods plan</h4>
+<p>Our original plan was to collect data from 282 participants. However, due to technical difficulties (the number of data shown on the Prolific website and Proliferate differed), in the end, we only have access to data from 269 participants. Our guess is that some participants closed the tab before the data was sent to Proliferate, but we are not sure. We also excluded one non-binary participant due to insufficient data for this group.</p>
+<p>What is unexpected is the large number of participants we excluded using the pre-registered exclusion criteria. We plan to address this by doing exploratory analyses using looser exclusion criteria, especially regarding accuracy rate.</p>
+</section>
+</section>
+</section>
+<section id="results" class="level2">
+<h2 class="anchored" data-anchor-id="results">Results</h2>
+<section id="data-preparation" class="level3">
+<h3 class="anchored" data-anchor-id="data-preparation">Data preparation</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="do">### Data Preparation</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="do">#### Load Relevant Libraries and Functions</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'dplyr'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:stats':
+
+    filter, lag</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ez)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(osfr)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stringr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'stringr' was built under R version 4.3.1</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(effectsize)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(metafor)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'metafor' was built under R version 4.3.1</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: Matrix</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'Matrix'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:tidyr':
+
+    expand, pack, unpack</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: metadat</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: numDeriv</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Loading the 'metafor' package (version 4.4-0). For an
+introduction to the package please type: help(metafor)</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(here)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>here() starts at /Users/chuqihu/Desktop/tarampi2016_rescue</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="do">#### Import data</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>files <span class="ot">&lt;-</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">list.files</span>(<span class="at">path =</span> <span class="st">"../final data/"</span>, <span class="at">full.names =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="co"># read in and combine all the CSV files using bind_rows()</span></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>combined_data <span class="ot">&lt;-</span> <span class="fu">lapply</span>(files, <span class="cf">function</span>(filepath) {</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>  df <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(filepath)</span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(df)}) <span class="sc">%&gt;%</span></span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">bind_rows</span>()</span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>  totalp <span class="ot">&lt;-</span> combined_data <span class="sc">%&gt;%</span></span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">unique_worker_count =</span> <span class="fu">n_distinct</span>(workerid))</span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a><span class="do">#### Data exclusion / filtering</span></span>
+<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a><span class="co"># exclude unwanted columns and rows</span></span>
+<span id="cb17-16"><a href="#cb17-16" aria-hidden="true" tabindex="-1"></a>organized.data <span class="ot">&lt;-</span> combined_data <span class="sc">%&gt;%</span></span>
+<span id="cb17-17"><a href="#cb17-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="st">"workerid"</span>,</span>
+<span id="cb17-18"><a href="#cb17-18" aria-hidden="true" tabindex="-1"></a>         <span class="st">"condition"</span>,</span>
+<span id="cb17-19"><a href="#cb17-19" aria-hidden="true" tabindex="-1"></a>         <span class="st">"stimulus"</span>,</span>
+<span id="cb17-20"><a href="#cb17-20" aria-hidden="true" tabindex="-1"></a>         <span class="st">"correct"</span>,</span>
+<span id="cb17-21"><a href="#cb17-21" aria-hidden="true" tabindex="-1"></a>         <span class="st">"response"</span>,</span>
+<span id="cb17-22"><a href="#cb17-22" aria-hidden="true" tabindex="-1"></a>         <span class="st">"gender"</span>,</span>
+<span id="cb17-23"><a href="#cb17-23" aria-hidden="true" tabindex="-1"></a>         <span class="st">"first"</span>,</span>
+<span id="cb17-24"><a href="#cb17-24" aria-hidden="true" tabindex="-1"></a>         <span class="st">"second"</span>,</span>
+<span id="cb17-25"><a href="#cb17-25" aria-hidden="true" tabindex="-1"></a>         <span class="st">"tech_difficulty"</span>,</span>
+<span id="cb17-26"><a href="#cb17-26" aria-hidden="true" tabindex="-1"></a>         <span class="st">"participant_hypothesis"</span>,</span>
+<span id="cb17-27"><a href="#cb17-27" aria-hidden="true" tabindex="-1"></a>         <span class="st">"bothQuestionsCorrect"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb17-28"><a href="#cb17-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span> (response <span class="sc">!=</span> <span class="dv">0</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb17-29"><a href="#cb17-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(gender <span class="sc">!=</span><span class="st">"Other"</span>)<span class="sc">%&gt;%</span></span>
+<span id="cb17-30"><a href="#cb17-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span> (workerid <span class="sc">!=</span> <span class="st">"na"</span>)<span class="sc">%&gt;%</span></span>
+<span id="cb17-31"><a href="#cb17-31" aria-hidden="true" tabindex="-1"></a>  <span class="co">#excluding those who failed comprehension checks</span></span>
+<span id="cb17-32"><a href="#cb17-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span>(workerid <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"167"</span>, <span class="st">"65"</span>,<span class="st">"44"</span>,<span class="st">"164"</span>,<span class="st">"169"</span>,<span class="st">"189"</span>,<span class="st">"275"</span>,<span class="st">"262"</span>,<span class="st">"88"</span>,<span class="st">"106"</span>,<span class="st">"313"</span>,<span class="st">"302"</span>,<span class="st">"75"</span>,<span class="st">"251"</span>,<span class="st">"223"</span>,<span class="st">"72"</span>,<span class="st">"261"</span>,<span class="st">"104"</span>,<span class="st">"152"</span>,<span class="st">"234"</span>,<span class="st">"118"</span>)))<span class="sc">%&gt;%</span></span>
+<span id="cb17-33"><a href="#cb17-33" aria-hidden="true" tabindex="-1"></a>  <span class="co">#excluding those who correctly guessed the hypothesis</span></span>
+<span id="cb17-34"><a href="#cb17-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span>workerid <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"289"</span>,<span class="st">"268"</span>,<span class="st">"190"</span>))</span>
+<span id="cb17-35"><a href="#cb17-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-36"><a href="#cb17-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-37"><a href="#cb17-37" aria-hidden="true" tabindex="-1"></a><span class="do">#### Prepare data for analysis - create columns that calculates the percentage of correct answers etc.</span></span>
+<span id="cb17-38"><a href="#cb17-38" aria-hidden="true" tabindex="-1"></a>percentage_correct <span class="ot">&lt;-</span> organized.data <span class="sc">%&gt;%</span></span>
+<span id="cb17-39"><a href="#cb17-39" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(workerid)<span class="sc">%&gt;%</span></span>
+<span id="cb17-40"><a href="#cb17-40" aria-hidden="true" tabindex="-1"></a>  <span class="co">#-1 in the denominator because in the task if 30s pass, and the participant did not finish the 32 items, the last one will automatically marked false.</span></span>
+<span id="cb17-41"><a href="#cb17-41" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">correct_percent =</span> (<span class="fu">sum</span> (correct <span class="sc">==</span> <span class="st">"True"</span>))<span class="sc">/</span>(<span class="fu">sum</span> (correct <span class="sc">==</span> <span class="st">"True"</span>) <span class="sc">+</span> <span class="fu">sum</span> (correct <span class="sc">==</span> <span class="st">"False"</span>)<span class="sc">-</span><span class="dv">1</span>))<span class="sc">%&gt;%</span></span>
+<span id="cb17-42"><a href="#cb17-42" aria-hidden="true" tabindex="-1"></a>  <span class="co">#the line above made the correct_percent of the participants who corrected responded to all 32 items greater than 1. This line is trying to fix it</span></span>
+<span id="cb17-43"><a href="#cb17-43" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">correct_percent =</span> <span class="fu">ifelse</span>(correct_percent <span class="sc">&gt;</span> <span class="dv">1</span>, <span class="dv">1</span>, correct_percent))</span>
+<span id="cb17-44"><a href="#cb17-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-45"><a href="#cb17-45" aria-hidden="true" tabindex="-1"></a>strict_exclusion <span class="ot">&lt;-</span> percentage_correct <span class="sc">%&gt;%</span></span>
+<span id="cb17-46"><a href="#cb17-46" aria-hidden="true" tabindex="-1"></a>  <span class="co">#excluding those whose accuracy rate is less than 55%</span></span>
+<span id="cb17-47"><a href="#cb17-47" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span> (correct_percent <span class="sc">&gt;</span> <span class="fl">0.55</span>)</span>
+<span id="cb17-48"><a href="#cb17-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-49"><a href="#cb17-49" aria-hidden="true" tabindex="-1"></a><span class="co">#prepare the data so that only one row is preserved for each participant</span></span>
+<span id="cb17-50"><a href="#cb17-50" aria-hidden="true" tabindex="-1"></a>ready_data <span class="ot">&lt;-</span> strict_exclusion <span class="sc">%&gt;%</span></span>
+<span id="cb17-51"><a href="#cb17-51" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(workerid) <span class="sc">%&gt;%</span></span>
+<span id="cb17-52"><a href="#cb17-52" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">correct_count =</span> <span class="fu">sum</span>(correct <span class="sc">==</span> <span class="st">"True"</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb17-53"><a href="#cb17-53" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(stimulus <span class="sc">==</span> <span class="st">"img/spatial/version2/p1.png"</span><span class="sc">|</span> stimulus <span class="sc">==</span> <span class="st">"img/social/version2/p1.png"</span>)</span>
+<span id="cb17-54"><a href="#cb17-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-55"><a href="#cb17-55" aria-hidden="true" tabindex="-1"></a>graph_data <span class="ot">=</span> ready_data <span class="sc">%&gt;%</span></span>
+<span id="cb17-56"><a href="#cb17-56" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(condition, gender) <span class="sc">%&gt;%</span></span>
+<span id="cb17-57"><a href="#cb17-57" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">mean_correct =</span> <span class="fu">mean</span>(correct_count),<span class="at">mean_sem =</span> <span class="fu">sd</span>(correct_count) <span class="sc">/</span> <span class="fu">sqrt</span>(<span class="fu">n</span>())</span>
+<span id="cb17-58"><a href="#cb17-58" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="results-of-control-measures" class="level3">
+<h3 class="anchored" data-anchor-id="results-of-control-measures">Results of control measures</h3>
+<p>The result of the manipulation check shows that the majority of people still remember the instructions they read after completing the task, indicating that state induction is likely to be effective.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Prepare data for manipulation check</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>manipulation_check <span class="ot">&lt;-</span> graph_data <span class="sc">%&gt;%</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(condition, gender) <span class="sc">%&gt;%</span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">pass_rate =</span> <span class="fu">sum</span>(bothQuestionsCorrect <span class="sc">==</span> <span class="st">"True"</span>) <span class="sc">/</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>                (<span class="fu">sum</span>(bothQuestionsCorrect <span class="sc">==</span> <span class="st">"True"</span>) <span class="sc">+</span> <span class="fu">sum</span>(bothQuestionsCorrect <span class="sc">==</span> <span class="st">"False"</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`summarise()` has grouped output by 'condition'. You can override using the
+`.groups` argument.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> manipulation_check, <span class="fu">aes</span>(<span class="at">x =</span> gender, <span class="at">y =</span> pass_rate, <span class="at">fill=</span>condition)) <span class="sc">+</span></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">position =</span> <span class="st">"dodge"</span>, <span class="at">width =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">"Gender"</span>) <span class="sc">+</span></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">"Proportion of People Passing Manipulation Check"</span>) <span class="sc">+</span></span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">fill =</span> <span class="st">"Condition"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="Replication-Report.rmd_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="confirmatory-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="confirmatory-analysis">Confirmatory analysis</h3>
+<p>A 2 (sex: male, female) × 2 (condition: social, spatial) between-subjects ANOVA was conducted. The analysis revealed a significant main effect of sex, F(1, 162) = 21.19, p &lt; .001,ηp²= .12. There was also a significant main effect of condition, F(1, 162) = 36.50, p &lt; .001, ηp²= .18. However, the interaction between sex and condition did not replicate, F(1, 162) = 1.241, p = .267,ηp² = .0076.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co">#ANOVA test</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>anova<span class="ot">&lt;-</span> <span class="fu">aov</span>(correct_count <span class="sc">~</span> gender <span class="sc">*</span> condition, <span class="at">data =</span> ready_data)</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(anova)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                  Df Sum Sq Mean Sq F value   Pr(&gt;F)    
+gender             1   1196  1195.6  21.183 8.39e-06 ***
+condition          1   2060  2059.8  36.494 1.01e-08 ***
+gender:condition   1     70    70.0   1.241    0.267    
+Residuals        162   9144    56.4                     
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">eta_squared</span>(anova)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># Effect Size for ANOVA (Type I)
+
+Parameter        | Eta2 (partial) |       95% CI
+------------------------------------------------
+gender           |           0.12 | [0.05, 1.00]
+condition        |           0.18 | [0.10, 1.00]
+gender:condition |       7.60e-03 | [0.00, 1.00]
+
+- One-sided CIs: upper bound fixed at [1.00].</code></pre>
+</div>
+</div>
+<p>Besides ANOVA, the original study also included t-tests. Like the original study, we did find that females performed better in the social condition (M = 18.4, SD = 8.77, CI = [15.75, 21.05]) than the spatial condition (M = 12.9, SD = 7.58, CI = [9.95, 15.90]), t(56.478)= 2.6966, p= 0.0092. However, unlike the original study, our data suggested that males also performed better in the social condition (M = 25.9, SD = 6.82, CI = [23.99, 27.78]) than the spatial condition (M = 17.7 SD = 6.96, CI = [15.75, 19.65]), t(96.848) = 5.9101, p &lt; .001. Like the original paper, we found males perform better than females in the spatial condition t(96.848) = 5.91, p &lt; .001. However, we also found this trend to hold true in the social condition t(76.665) = 4.49, p &lt; .001.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="do">###T-Tests</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>sem <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {<span class="fu">sd</span>(x, <span class="at">na.rm=</span><span class="cn">TRUE</span>) <span class="sc">/</span> <span class="fu">sqrt</span>(<span class="fu">sum</span>(<span class="sc">!</span><span class="fu">is.na</span>((x))))}</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>ci <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {<span class="fu">sem</span>(x) <span class="sc">*</span> <span class="fl">1.96</span>} </span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a><span class="do">####Female Score By Condition</span></span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>female_data <span class="ot">&lt;-</span> ready_data <span class="sc">%&gt;%</span></span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">subset</span>(gender<span class="sc">==</span><span class="st">'Female'</span>)</span>
+<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a>female_summary <span class="ot">&lt;-</span> female_data <span class="sc">%&gt;%</span></span>
+<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(condition) <span class="sc">%&gt;%</span></span>
+<span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean =</span> <span class="fu">mean</span>(correct_count), <span class="at">sd =</span> <span class="fu">sd</span>(correct_count), <span class="at">ci_lower =</span> <span class="fu">mean</span>(correct_count) <span class="sc">-</span> <span class="fu">ci</span>(correct_count), <span class="at">ci_upper =</span> <span class="fu">mean</span>(correct_count) <span class="sc">+</span> <span class="fu">ci</span>(correct_count))</span>
+<span id="cb25-12"><a href="#cb25-12" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(correct_count <span class="sc">~</span> condition, <span class="at">data =</span> female_data, <span class="at">var.equal =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Welch Two Sample t-test
+
+data:  correct_count by condition
+t = 2.6966, df = 56.478, p-value = 0.009216
+alternative hypothesis: true difference in means between group social and group spatial is not equal to 0
+95 percent confidence interval:
+ 1.410983 9.558540
+sample estimates:
+ mean in group social mean in group spatial 
+             18.40476              12.92000 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="do">####Male Score By Condition</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>male_data <span class="ot">&lt;-</span> ready_data <span class="sc">%&gt;%</span></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">subset</span>(gender<span class="sc">==</span><span class="st">'Male'</span>)</span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>male_summary <span class="ot">&lt;-</span> male_data <span class="sc">%&gt;%</span></span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(condition) <span class="sc">%&gt;%</span></span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean =</span> <span class="fu">mean</span>(correct_count), <span class="at">sd =</span> <span class="fu">sd</span>(correct_count), <span class="at">ci_lower =</span> <span class="fu">mean</span>(correct_count) <span class="sc">-</span> <span class="fu">ci</span>(correct_count), <span class="at">ci_upper =</span> <span class="fu">mean</span>(correct_count) <span class="sc">+</span> <span class="fu">ci</span>(correct_count))</span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(correct_count <span class="sc">~</span> condition, <span class="at">data =</span> male_data, <span class="at">var.equal =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Welch Two Sample t-test
+
+data:  correct_count by condition
+t = 5.9101, df = 96.848, p-value = 5.106e-08
+alternative hypothesis: true difference in means between group social and group spatial is not equal to 0
+95 percent confidence interval:
+  5.436991 10.935254
+sample estimates:
+ mean in group social mean in group spatial 
+             25.88000              17.69388 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="do">####Spatial Score By Sex</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>spatial_data <span class="ot">=</span> ready_data <span class="sc">%&gt;%</span></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">subset</span>(condition<span class="sc">==</span><span class="st">'spatial'</span>)</span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(correct_count <span class="sc">~</span> gender, <span class="at">data =</span> spatial_data, <span class="at">var.equal =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Welch Two Sample t-test
+
+data:  correct_count by gender
+t = -2.6317, df = 44.867, p-value = 0.0116
+alternative hypothesis: true difference in means between group Female and group Male is not equal to 0
+95 percent confidence interval:
+ -8.427697 -1.120058
+sample estimates:
+mean in group Female   mean in group Male 
+            12.92000             17.69388 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="do">####Social Score By Sex</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>social_data <span class="ot">=</span> ready_data <span class="sc">%&gt;%</span></span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">subset</span>(condition<span class="sc">==</span><span class="st">'social'</span>)</span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Recoding gender (example: assuming "male" and "female" as values)</span></span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>social_data<span class="sc">$</span>gender <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(social_data<span class="sc">$</span>gender <span class="sc">==</span> <span class="st">"Male"</span>, <span class="st">"Female"</span>, <span class="st">"Male"</span>)</span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Running the t-test again</span></span>
+<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a>t.test_result <span class="ot">=</span> <span class="fu">t.test</span>(correct_count <span class="sc">~</span> gender, <span class="at">data =</span> social_data, <span class="at">var.equal =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(t.test_result)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Welch Two Sample t-test
+
+data:  correct_count by gender
+t = 4.4954, df = 76.665, p-value = 2.425e-05
+alternative hypothesis: true difference in means between group Female and group Male is not equal to 0
+95 percent confidence interval:
+  4.163821 10.786655
+sample estimates:
+mean in group Female   mean in group Male 
+            25.88000             18.40476 </code></pre>
+</div>
+</div>
+<p>Current Replication Results</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Adjust the factor levels for 'condition' so that it matches the graph of the original paper</span></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>graph_data<span class="sc">$</span>condition <span class="ot">&lt;-</span> <span class="fu">factor</span>(graph_data<span class="sc">$</span>condition, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"spatial"</span>, <span class="st">"social"</span>))</span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting</span></span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> graph_data, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">reorder</span>(gender, <span class="sc">-</span>mean_correct), <span class="at">y =</span> mean_correct, <span class="at">fill =</span> condition)) <span class="sc">+</span></span>
+<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">position =</span> <span class="st">"dodge"</span>, <span class="at">width =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb33-8"><a href="#cb33-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_errorbar</span>(</span>
+<span id="cb33-9"><a href="#cb33-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">ymin =</span> mean_correct <span class="sc">-</span> mean_sem, <span class="at">ymax =</span> mean_correct <span class="sc">+</span> mean_sem),</span>
+<span id="cb33-10"><a href="#cb33-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">width =</span> <span class="dv">0</span>,</span>
+<span id="cb33-11"><a href="#cb33-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">position =</span> <span class="fu">position_dodge</span>(<span class="fl">0.5</span>)</span>
+<span id="cb33-12"><a href="#cb33-12" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb33-13"><a href="#cb33-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(</span>
+<span id="cb33-14"><a href="#cb33-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">label =</span> <span class="fu">sprintf</span>(<span class="st">"%.2f"</span>, mean_correct), </span>
+<span id="cb33-15"><a href="#cb33-15" aria-hidden="true" tabindex="-1"></a>        <span class="at">y =</span> mean_correct <span class="sc">+</span> <span class="fl">1.3</span>), </span>
+<span id="cb33-16"><a href="#cb33-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">position =</span> <span class="fu">position_dodge</span>(<span class="fl">0.5</span>),</span>
+<span id="cb33-17"><a href="#cb33-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">vjust =</span> <span class="sc">-</span><span class="fl">0.5</span></span>
+<span id="cb33-18"><a href="#cb33-18" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb33-19"><a href="#cb33-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">"Gender"</span>) <span class="sc">+</span></span>
+<span id="cb33-20"><a href="#cb33-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">"Mean Number Correct"</span>) <span class="sc">+</span></span>
+<span id="cb33-21"><a href="#cb33-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">fill =</span> <span class="st">"Condition"</span>)<span class="sc">+</span></span>
+<span id="cb33-22"><a href="#cb33-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"Mean Correct by Sex and Condition"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="Replication-Report.rmd_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>Original Study Results <img src="original.jpg" class="img-fluid" alt="original"></p>
+<p>1st Replication Results <img src="replication1.jpg" class="img-fluid" alt="1st replication graph"></p>
+</section>
+<section id="exploratory-analyses" class="level3">
+<h3 class="anchored" data-anchor-id="exploratory-analyses">Exploratory analyses</h3>
+<p>We are also interested in seeing whether our exclusion criteria - specifically the one for accuracy cutoff - are too strict. Here, we conduct exploratory analysis with a loose exclusion criteria: excluding no participant based on accuracy rate.</p>
+<p>The distribution of participant’s accuracy in performance by gender is shown in the graph below.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>loose_exclusion <span class="ot">&lt;-</span> percentage_correct <span class="sc">%&gt;%</span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(workerid) <span class="sc">%&gt;%</span></span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">correct_count =</span> <span class="fu">sum</span>(correct <span class="sc">==</span> <span class="st">"True"</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(stimulus <span class="sc">==</span> <span class="st">"img/spatial/version2/p1.png"</span><span class="sc">|</span> stimulus <span class="sc">==</span> <span class="st">"img/social/version2/p1.png"</span>)</span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(loose_exclusion, <span class="fu">aes</span>(<span class="at">x=</span>correct_percent, <span class="at">fill=</span>gender)) <span class="sc">+</span></span>
+<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">stat=</span><span class="st">"count"</span>) <span class="sc">+</span></span>
+<span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span><span class="fl">0.02</span>) <span class="sc">+</span></span>
+<span id="cb34-9"><a href="#cb34-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"Distribution of Accuracy Rate Before Exclusion"</span>)<span class="sc">+</span></span>
+<span id="cb34-10"><a href="#cb34-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">"Accuracy Rate"</span>) <span class="sc">+</span></span>
+<span id="cb34-11"><a href="#cb34-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">"Count"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in geom_histogram(stat = "count"): Ignoring unknown parameters:
+`binwidth`, `bins`, and `pad`</code></pre>
+</div>
+<div class="cell-output-display">
+<p><img src="Replication-Report.rmd_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>We conducted an ANOVA test using this dataset. Again, the analysis revealed a significant main effect of sex, F(1, 162) = 41.43, p &lt; .001,ηp²= .15; a significant main effect of condition, F(1, 162) = 30.85, p &lt; .001, ηp²= .11. However, the interaction between sex and condition still did not replicate, F(1, 162) = 2.128, p = .146,ηp² = .0088.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>anova<span class="ot">&lt;-</span> <span class="fu">aov</span>(correct_count <span class="sc">~</span> gender <span class="sc">*</span> condition, <span class="at">data =</span> loose_exclusion)</span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(anova)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                  Df Sum Sq Mean Sq F value   Pr(&gt;F)    
+gender             1   2217  2216.8  41.432 6.58e-10 ***
+condition          1   1651  1650.7  30.852 7.37e-08 ***
+gender:condition   1    114   113.9   2.128    0.146    
+Residuals        240  12841    53.5                     
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">eta_squared</span>(anova)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># Effect Size for ANOVA (Type I)
+
+Parameter        | Eta2 (partial) |       95% CI
+------------------------------------------------
+gender           |           0.15 | [0.08, 1.00]
+condition        |           0.11 | [0.06, 1.00]
+gender:condition |       8.79e-03 | [0.00, 1.00]
+
+- One-sided CIs: upper bound fixed at [1.00].</code></pre>
+</div>
+</div>
+<p>Besides applying looser exclusion criteria, we are also interested in seeing whether the accuracy rates of the two gender groups differ. If it does differ, it suggests that males and females are taking different strategies when taking the task: one group is being more scrutinized.</p>
+<p>A t-test conducted using the dataset obtained under the strict exclusion criteria reveals no significant difference between the two gender groups’ performance in terms of accuracy, t(88.7) = 1.41, p = .16. However, a t-test conducted using the loose-exclusion dataset suggests that males show higher accuracy than females in the task, t(237.8) = 4.28, p &lt; .001.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>loose_exclusion<span class="sc">$</span>gender <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(loose_exclusion<span class="sc">$</span>gender <span class="sc">==</span> <span class="st">"Male"</span>, <span class="st">"Female"</span>, <span class="st">"Male"</span>)</span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(correct_percent <span class="sc">~</span> gender, <span class="at">data =</span> loose_exclusion, <span class="at">var.equal =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Welch Two Sample t-test
+
+data:  correct_percent by gender
+t = 4.2822, df = 237.77, p-value = 2.687e-05
+alternative hypothesis: true difference in means between group Female and group Male is not equal to 0
+95 percent confidence interval:
+ 0.06532247 0.17663350
+sample estimates:
+mean in group Female   mean in group Male 
+           0.7962476            0.6752696 </code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="discussion" class="level2">
+<h2 class="anchored" data-anchor-id="discussion">Discussion</h2>
+</section>
+<section id="mini-meta-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="mini-meta-analysis">Mini meta analysis</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>meta<span class="ot">&lt;-</span><span class="fu">read_csv</span>(<span class="st">"meta.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 3 Columns: 5
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr (1): Study
+dbl (3): N, d, d_se
+lgl (1): Citation
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>mini_meta_mod <span class="ot">&lt;-</span> <span class="fu">rma</span>(<span class="at">yi=</span>d, <span class="at">sei=</span>d_se, <span class="at">slab=</span>Study, <span class="at">data=</span>meta)</span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mini_meta_mod)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Random-Effects Model (k = 3; tau^2 estimator: REML)
+
+  logLik  deviance       AIC       BIC      AICc   
+ -1.6951    3.3902    7.3902    4.7765   19.3902   
+
+tau^2 (estimated amount of total heterogeneity): 0.3181 (SE = 0.3187)
+tau (square root of estimated tau^2 value):      0.5640
+I^2 (total heterogeneity / total variability):   99.83%
+H^2 (total variability / sampling variability):  591.86
+
+Test for Heterogeneity:
+Q(df = 2) = 766.4427, p-val &lt; .0001
+
+Model Results:
+
+estimate      se    zval    pval    ci.lb   ci.ub    
+  0.1103  0.3259  0.3385  0.7350  -0.5285  0.7492    
+
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">forest</span>(mini_meta_mod)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="Replication-Report.rmd_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>Combining across the original paper, 1st replication, and 2nd replication, the aggregate effect size is 0.11.</p>
+<p>Another direct replication was done by Geer &amp; Ganley (2023).They reported a significant main effect of sex, F(1, 133) = 11.18, p = .001, η2 = .08, such that males (M = 10.04, 95% CI = [8.75, 11.32]) labelled more turns correctly on average than did females (M = 7.25, 95% CI = [6.22, 8.28]). When looking at female participants specifically, there was no significant difference in performance of the two tasks t(74) = 1.07, p = .289, d = .24.</p>
+<section id="summary-of-replication-attempt" class="level3">
+<h3 class="anchored" data-anchor-id="summary-of-replication-attempt">Summary of Replication Attempt</h3>
+<p>The key result of the original study - the interaction effect between sex and condition - was not replicated. However, we did replicate the main effect of sex and the main effect of condition. Unlike the original study, our data suggested that males performed better in both spatial and social conditions. Thus, on a scale of 0-1, I would rate this project a 0.25 in terms of how well the original study’s result replicates.</p>
+<p>In terms of methodological similarity, I would say this replication is a very close replication of the original study (LeBel et al.,2017). Although the physical setting and the procedural details are different, the effect and hypothesis, construct of IV and DV, and population largely matched the original study.</p>
+</section>
+<section id="commentary" class="level3">
+<h3 class="anchored" data-anchor-id="commentary">Commentary</h3>
+<p>The exploratory analysis suggests that the pattern we see in our confirmatory analysis still holds true even if we apply looser exclusion criteria. Moreover, the dataset for the confirmatory analysis indicates no significant differences in performance accuracy between the two gender groups. This implies that the smaller number of corners labeled by females may not necessarily mean a higher level of scrutiny in the task.</p>
+<p>However, there are several factors that might have contributed to the failure of the replication.</p>
+<ol type="1">
+<li><p>A large number of data (~38%) was excluded after applying the pre-registered exclusion criteria. Particularly, many participants did not meet the 55% accuracy rate. It could be that we overestimated people’s performance on the task, or it could mean that people put in minimal effort when doing the task online.</p></li>
+<li><p>Compared to the original paper and the 1st replication, this current replication also shows that people labeled more corners in general. This is possibly due to pressing the left/right arrow key requiring less cognitive load than writing down “L” or “R” (original study’s method) or selecting letters from a drop-down menu (1st replication’s method). It is possible that the results we get are modulated by or limited by the studies’ methods.</p></li>
+<li><p>Although the manipulation checks at the end suggested that people still remember the study instructions that characterize the task, this is only indirect evidence for the state induction being effective. In the original study, participants were tested in person and heard the instructions from an experimenter. It is possible that the success of a subtle state induction like this depends on real-time social interaction.</p></li>
+</ol>
+<p>The original author raised a concern about showing a smaller portion of the map on each trial; it might cause participants to focus their attention differently: in the original study, people need to focus both on a specific part and ignore the surroundings mentally. In the current version, less effort is needed to ignore the surroundings.</p>
+<p>Another concern from us is that the current approach does not allow participants to go back and change their answers on previous trials. Switching answers (or doing the task out of sequence) was possible in the original paper and 1st replication. This change might have impacted the approach people take in doing the task.</p>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
